@@ -2,11 +2,11 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
-.btn{
+.btn-lg{
   background-color: rgb(255, 251, 236);
   margin: 5px;
 }
-.container{
+.container-fluid{
   text-align: center;
   background-color: rgb(168, 219, 177);
   margin: 25px;
