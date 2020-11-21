@@ -2,3 +2,23 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+.map{
+  background-color: rgb(189, 228, 171);
+}
+.btn{
+  background-color: rgb(168, 219, 177);
+}
+
+.container{
+  text-align: center;
+}
+.navbar{
+  margin: 25px;
+  font-family: 'Holtwood One SC', serif;
+  background-color: rgb(168, 219, 177);
+}
+body{
+  font-family: 'Quicksand', sans-serif;
+  background-color: rgb(236, 227, 198);
+}
