@@ -2,16 +2,14 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
-
-.map{
-  background-color: rgb(189, 228, 171);
-}
 .btn{
-  background-color: rgb(168, 219, 177);
+  background-color: rgb(255, 251, 236);
+  margin: 5px;
 }
-
 .container{
   text-align: center;
+  background-color: rgb(168, 219, 177);
+  margin: 25px;
 }
 .navbar{
   margin: 25px;
@@ -20,5 +18,12 @@ form.login {
 }
 body{
   font-family: 'Quicksand', sans-serif;
-  background-color: rgb(236, 227, 198);
+  background-color: rgb(255, 251, 236);
+}
+.placeholder{
+  margin: 5px;
+  width: 300px;
+}
+.table{
+
 }
