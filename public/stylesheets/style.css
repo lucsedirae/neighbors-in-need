@@ -2,3 +2,65 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+.btn-lg{
+  background-color: rgb(255, 251, 236);
+  margin: 5px;
+
+}
+.container-fluid{
+  text-align: center;
+  background-color: rgb(168, 219, 177);
+  margin: 25px;
+  border-radius: 15px;
+}
+/*Navbar stuff */
+.navbar-brand{
+   width: 200px;
+   height: 97.5px;
+}
+.weather-icon{
+  margin-top: 2px;
+  width: 50px;
+}
+.date, .temp{
+  font-size: 60%;
+  text-align: center;
+  margin-bottom: 1px;
+}
+.space-over{
+  margin-left:120px;
+}
+
+/*  */
+
+body{
+  font-family: 'Quicksand', sans-serif;
+  background-color: rgb(163, 163, 163);
+}
+.placeholder{
+  margin: 5px;
+  width: 300px;
+}
+
+@media screen and (max-width: 450px) {
+  .navbar-brand{
+    width: 150px;
+    height: 73px;
+    padding: 5px;
+ }
+  .weather-icon{
+    width: 30px;
+  }
+  .date, .temp{
+    font-size: 40%;
+    text-align: center;
+  }
+  p{
+    margin-bottom: 2px;
+  }
+  .nav-col{
+    padding-left: 5px;
+    padding-right: 5px;
+
+  }
+}
