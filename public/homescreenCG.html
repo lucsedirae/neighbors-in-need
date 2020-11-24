@@ -17,9 +17,10 @@
 
 <body>
   <!-- The Navbar with 3 Day Weather Forecast and Logout -->
-  <nav class="navbar">
+  <!-- navbar alignment breaks at  770px-->
+  <nav class="navbar container-fluid">
     <img src="img/NIN-WIP.PNG" class="navbar-brand navbar-header"></img>
-    <ul class="nav navbar-nav justify-content-end">
+    <ul class="nav navbar-nav space-over">
         <li class="nav-item">
             <div class="weather-bar day-0">
                 <img class="weather-icon"></img>
@@ -42,9 +43,45 @@
             </div>
         </li>
     </ul>
-    <i class="fas fa-sign-out-alt"></i>
-        <!-- <a class="logout" href="/logout"></a>   move this to js--> 
+    <div class="justify-content-end">
+        <i class="fas fa-sign-out-alt"></i>
+        <!-- <a class="logout" href="/logout"></a>   move this to js -->
+    </div>
   </nav>
+
+  <!--Home made navbar alternative - turned out to be an equal pita and breaks at 998px-->
+  <!-- <div class="container-fluid">
+    <div class="row align-items-center my-auto"> -->
+        <!-- first col with img -->
+        <!-- <div class="col-4">
+            <img src="img/NIN-WIP.PNG" class="navbar-brand"></img>
+        </div> -->
+        <!-- second col with icon -->
+        <!-- <div class="col-1 weather-bar day-0">
+                <img class="weather-icon"></img>
+                <p class="date"></p>
+                <p class="temp"></p>
+        </div> -->
+        <!-- third col with icon -->
+        <!-- <div class="col-1 weather-bar day-1">
+                <img class="weather-icon"></img>
+                <p class="date"></p>
+                <p class="temp"></p>
+        </div> -->
+        <!-- fourth col with icon -->
+        <!-- <div class="col-1 weather-bar day-2">
+                <img class="weather-icon"></img>
+                <p class="date"></p>
+                <p class="temp"></p>
+        </div> -->
+        <!-- last col with signout -->
+        <!-- <div class="col-4">
+             move link to js? -->
+            <!-- <i class="fas fa-sign-out-alt"></i> 
+            <a class="logout" href="/logout"></a>   
+        </div>
+    </div>
+</div> -->
 
   <!-- Main Content -->
   <div class="container-fluid">
