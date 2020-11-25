@@ -14,7 +14,7 @@ module.exports = function(app) {
   });
 
   app.get("/login", (req, res) => {
-    // *If the user already has an account send them to the members page
+    // *If the user already has an account send them to the homescreenCG page, otherwise route to login.html 
     if (req.user) {
       res.redirect("/homescreenCG");
     }

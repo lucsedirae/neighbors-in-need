@@ -1,7 +1,7 @@
 //To remove any potential syncing issues on load
-$(document).ready(function() {
+$(document).ready(() => {
   //*API key for openweathermap.org ajax call
-  var APIkey = "84e4a73dbe21261105a8b82f64a0523a";
+  const APIkey = "84e4a73dbe21261105a8b82f64a0523a";
 
   //*Populates weather forecast to DOM
   function weather() {
@@ -14,20 +14,23 @@ $(document).ready(function() {
     console.log(queryURL);
     $.ajax({
       url: queryURL,
-      method: "GET",
-    }).then(function(response) {
+      method: "GET"
+    }).then(response => {
+      let forecastDay = "";
+      let temp = "";
+      let wIcon = "";
       for (let i = 0; i < 4; i++) {
-        let day = $(".day-" + [i]);
+        const day = $(".day-" + [i]);
         console.log(response);
         if (i === 0) {
-          var forecastDay = moment(response.list[i].dt_txt);
-          var temp = Math.floor(response.list[i].main.temp);
-          var wIcon = response.list[i].weather[0].icon;
+          forecastDay = moment(response.list[i].dt_txt);
+          temp = Math.floor(response.list[i].main.temp);
+          wIcon = response.list[i].weather[0].icon;
         } else {
           j = i * 8;
-          var forecastDay = moment(response.list[j].dt_txt);
-          var temp = Math.floor(response.list[j].main.temp);
-          var wIcon = response.list[j].weather[0].icon;
+          forecastDay = moment(response.list[j].dt_txt);
+          temp = Math.floor(response.list[j].main.temp);
+          wIcon = response.list[j].weather[0].icon;
         }
         day.find(".date").html(forecastDay.format("MMM Do"));
         day
