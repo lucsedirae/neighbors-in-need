@@ -15,6 +15,12 @@ form.login {
 .table{
   color: black;
 }
+form{
+  text-align: left;
+}
+.form-check{
+  margin-bottom: 5px;
+}
 /*Navbar stuff */
 .navbar-img{
    width: 200px;
@@ -37,7 +43,13 @@ form.login {
 }
 h2{
   margin-top: 10px;
-  margin-bottom: 5px;
+}
+h3 {
+  font-size: medium;
+}
+legend{
+  font-size: medium;
+  margin-left: 10px;
 }
 /*  */
 
@@ -45,6 +57,7 @@ body{
   font-family: 'Quicksand', sans-serif;
   background: rgb(0,0,0);
   background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(168,219,177,1) 50%, rgba(223,223,223,1) 100%);
+  /* background: ; */
 }
 .placeholder{
   margin: 5px;
