@@ -3,15 +3,17 @@ form.login {
   margin-top: 50px;
 }
 .btn-lg{
-  background-color: rgb(255, 251, 236);
+  background-color: rgb(209, 209, 209);
   margin: 5px;
-
 }
 .container-fluid{
   text-align: center;
-  background-color: rgb(168, 219, 177);
+  background-color: rgb(168, 219, 177,.5);
   margin: 25px;
   border-radius: 15px;
+}
+.table{
+  color: black;
 }
 /*Navbar stuff */
 .navbar-brand{
@@ -23,25 +25,30 @@ form.login {
   width: 50px;
 }
 .date, .temp{
-  font-size: 60%;
+  /* font-size: 60%; */
   text-align: center;
   margin-bottom: 1px;
 }
 .space-over{
   margin-left:120px;
 }
-
 /*  */
 
 body{
   font-family: 'Quicksand', sans-serif;
-  background-color: rgb(163, 163, 163);
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(168,219,177,1) 50%, rgba(223,223,223,1) 100%);
 }
 .placeholder{
   margin: 5px;
   width: 300px;
 }
 
+.col-sm-1{
+  padding-left: 2px;
+  padding-right: 2px;
+}
+/* 
 @media screen and (max-width: 450px) {
   .navbar-brand{
     width: 150px;
@@ -58,9 +65,5 @@ body{
   p{
     margin-bottom: 2px;
   }
-  .nav-col{
-    padding-left: 5px;
-    padding-right: 5px;
-
-  }
-}
+  
+} */
