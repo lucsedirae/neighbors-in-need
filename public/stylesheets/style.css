@@ -6,7 +6,7 @@ form.login {
   background-color: rgb(209, 209, 209);
   margin: 5px;
 }
-.container-fluid{
+.container-fluid, .navbar{
   text-align: center;
   background-color: rgb(168, 219, 177,.5);
   margin: 25px;
@@ -16,7 +16,7 @@ form.login {
   color: black;
 }
 /*Navbar stuff */
-.navbar-brand{
+.navbar-img{
    width: 200px;
    height: 97.5px;
 }
@@ -31,6 +31,13 @@ form.login {
 }
 .space-over{
   margin-left:120px;
+}
+.fas{
+  margin-top: 30px;
+}
+h2{
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 /*  */
 
@@ -48,22 +55,19 @@ body{
   padding-left: 2px;
   padding-right: 2px;
 }
-/* 
+
 @media screen and (max-width: 450px) {
-  .navbar-brand{
+  .navbar-img{
     width: 150px;
     height: 73px;
-    padding: 5px;
+    padding: 10px;
  }
-  .weather-icon{
-    width: 30px;
-  }
+
   .date, .temp{
-    font-size: 40%;
     text-align: center;
   }
   p{
     margin-bottom: 2px;
   }
   
-} */
+}
