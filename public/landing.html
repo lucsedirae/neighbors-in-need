@@ -21,13 +21,16 @@
     <div class="row align-items-center">
       <div class="col-xs-4">
         <img src="img/NIN-WIP.PNG" class="navbar-img navbar-brand"></img>
+        <!-- ! JD - 11/24 - Added login button to have an anchor for the login.html to be served -->
+        <!-- ! This can be replaced with any styled transitional element but will require the id of login-button in order to not break the jQuery route hook in landing.js -->
+        <br>
+        <button type="button" id="login-button">Login</button>
       </div>
       <div class="col-xs-3 col-xs-offset-5">
         <i class="fas fa-sign-in-alt fa-lg"></i>
       </div>
     </div>
   </div>
-
   
   <!-- Main Content -->
   <div class="container-fluid">
@@ -35,8 +38,8 @@
     <div class="row justify-content-md-center">
       <div class="col-md-6 col-md-offset-3">
           <!-- description needs work -->
-        <h3>Neighbors in Need is a forum to inform our neighbors in need of any community provided shelter, goods and services in the local area.<span class=""></span></h3>
-      </div>
+          <h3>Neighbors in Need is a forum to inform our neighbors in need of any community provided shelter, goods and services in the local area.<span class=""></span></h3>
+        </div>
     </div>
 
     <!-- Row for Post Detail -->
@@ -46,8 +49,20 @@
                 <!-- Radio buttons for user routing -->
                 <fieldset class="form-group">
                   <div class="row">
-                    <legend class="col-form-label pt-0">Login</legend>
+                    <legend class="col-form-label pt-0">I am ...</legend>
                     <div class="col-sm-10">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
+                        <label class="form-check-label" for="gridRadios1">
+                          a neighbor in need.
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                        <label class="form-check-label" for="gridRadios2">
+                          interested in adding information for the area.
+                        </label>
+                      </div>
                 <!-- should these be hidden if NIN clicked? -->
                 <div class="form-group row">
                     <label class="sr-only col-sm-2 col-form-label" for="inlineFormInputGroupUsername2"></label>
@@ -67,22 +82,32 @@
                 </fieldset>
                 <div class="form-group row">
                   <div class="col-xs-10 col-sm-offset-2">
-                    <button type="submit" class="btn-lg">Login</button>
+                    <button type="submit" class="btn-lg">Create Account</button>
                     <br />
-                    <!-- need to change href to accurate landing referemce -->
-                    <p> &nbsp; Or create an account <a href="/landing" class="login-link">here</a></p>
+                    <p> &nbsp; Or log in <a href="/login" class="login-link">here</a></p>
                   </div>
                 </div>
             </form>
       </div>
     </div>
-   
+  
+    <!-- Add Post Button Row -->
+    <div class="row justify-content-md-center">
+        <div class="col-md-6 col-md-offset-3">
+            <button type="button" class="btn-lg">Add New Post</button>
+            <!-- ! JD - 11/24 - Added NIN button to have an anchor for the homescreenNIN.html to be served -->
+            <br>
+            <button type="button" class="btn-lg" id="NIN-button">NIN</button>
+        </div>
+    </div>
+    
   </div> <!--end div for container-->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!--Script Files-->
   <script type="text/javascript" src="js/members.js"></script>
   <script type="text/javascript" src="js/homescreen.js"></script>
+  <script type="text/javascript" src="js/landing.js"></script>
 
   <!--Moment.js-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
