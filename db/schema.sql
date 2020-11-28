@@ -1,0 +1,16 @@
+### Schema
+
+CREATE DATABASE event_db;
+USE event_db;
+
+CREATE TABLE event
+(
+	id int NOT NULL AUTO_INCREMENT,
+	SERVICE varchar(255) NOT NULL,
+	DATETIME NOT NULL,
+	LOCATE varchar(255) NOT NULL,
+	DESCRIPTION varchar(750) NOT NULL,
+	PRIMARY KEY (id)
+);
+
+
