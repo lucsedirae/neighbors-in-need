@@ -62,8 +62,7 @@ body{
   font-family: 'Quicksand', sans-serif;
   background: rgb(0,0,0);
   background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(168,219,177,1) 50%, rgba(223,223,223,1) 100%);
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-size: 100%;
 }
 .placeholder{
   margin: 5px;
