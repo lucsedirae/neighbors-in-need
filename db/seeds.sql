@@ -1,0 +1,1 @@
+INSERT INTO event_locations (address, latitude, longitude) VALUES ('6610 Fernwood St Henrico, VA', 37.5407, -77.4360);

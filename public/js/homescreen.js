@@ -14,8 +14,8 @@ $(document).ready(() => {
     console.log(queryURL);
     $.ajax({
       url: queryURL,
-      method: "GET"
-    }).then(response => {
+      method: "GET",
+    }).then((response) => {
       let forecastDay = "";
       let temp = "";
       let wIcon = "";
@@ -44,4 +44,27 @@ $(document).ready(() => {
     });
   }
   weather();
+
+  //! JD - 11-29 - Added function to draw the map on the homescreen view
+  function drawMap() {
+    const map = L.map("map").setView([37.5407, -77.436], 13);
+    const locations = [];
+
+    L.tileLayer(
+      "https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=Utb4r10D6uLj3qIbPQGs",
+      {
+        attribution:
+          '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
+      }
+    ).addTo(map);
+
+    const accessToken = "0a0c85b3c0a2dcab89f4744c3d376bd5";
+    let searchString = "6610 Fernwood St Henrico, VA 23228";
+    const queryURL =
+      "http://api.positionstack.com/v1/forward?access_key=" +
+      accessToken +
+      "&query=" +
+      searchString +
+      "&output=json";
+  }
 });
