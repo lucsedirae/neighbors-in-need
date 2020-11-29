@@ -10,7 +10,7 @@ module.exports = function(app) {
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
       email: req.user.email,
-      id: req.user.id
+      id: req.user.id,
     });
   });
 
@@ -49,5 +49,12 @@ module.exports = function(app) {
         id: req.user.id
       });
     }
+  });
+
+  app.get("/api/eventlocations", (req, res) => {
+    db.eventlocations.findAll({}).then(eventLocation => {
+      // We have access to the todos as an argument inside of the callback function
+      res.json(eventLocation);
+    });
   });
 };
