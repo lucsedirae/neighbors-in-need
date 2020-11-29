@@ -46,6 +46,7 @@ $(document).ready(() => {
   weather();
 
   //! JD - 11-29 - Added function to draw the map on the homescreen view
+  //* drawMap adds the map to the homescreen view
   function drawMap() {
     const map = L.map("map").setView([37.5407, -77.436], 13);
     const locations = [];
@@ -59,12 +60,27 @@ $(document).ready(() => {
     ).addTo(map);
 
     const accessToken = "0a0c85b3c0a2dcab89f4744c3d376bd5";
-    let searchString = "6610 Fernwood St Henrico, VA 23228";
+    //! searchString needs to be redefined as the address coming out of SQL
+    const searchString = "6610 Fernwood St Henrico, VA 23228";
     const queryURL =
       "http://api.positionstack.com/v1/forward?access_key=" +
       accessToken +
       "&query=" +
       searchString +
       "&output=json";
+
+    $.ajax({
+      url: queryURL,
+      method: "GET",
+    }).then(response => {
+      let locObj = response.data[0];
+      locations.locations.push({
+        address: locObj.label,
+        latitude: locObj.latitude,
+        longitude: locObj.longitude,
+      });
+    });
   }
+
+  drawMap();
 });
