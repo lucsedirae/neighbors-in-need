@@ -1,3 +1,4 @@
+
 //To remove any potential syncing issues on load
 $(document).ready(() => {
   //*API key for openweathermap.org ajax call
@@ -48,8 +49,15 @@ $(document).ready(() => {
   //! JD - 11-29 - Added function to draw the map on the homescreen view
   //* drawMap adds the map to the homescreen view
   function drawMap() {
+    let events = [];
+
     const map = L.map("map").setView([37.5407, -77.436], 13);
     const locations = [];
+
+    $.get("/api/events", data => {
+      events = data;
+      console.table(events);
+    });
 
     L.tileLayer(
       "https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=Utb4r10D6uLj3qIbPQGs",
@@ -73,7 +81,7 @@ $(document).ready(() => {
       url: queryURL,
       method: "GET",
     }).then(response => {
-      let locObj = response.data[0];
+      const locObj = response.data[0];
       locations.locations.push({
         address: locObj.label,
         latitude: locObj.latitude,
