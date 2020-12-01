@@ -13,7 +13,7 @@ form.login {
   border-radius: 15px;
   color: black;
 }
-.table{
+.table, li{
   color: black;
 }
 .login-link{
@@ -72,6 +72,10 @@ body{
 .col-sm-1{
   padding-left: 2px;
   padding-right: 2px;
+}
+
+.dropdown{
+  margin-bottom: 5px;
 }
 
 @media screen and (max-width: 450px) {
