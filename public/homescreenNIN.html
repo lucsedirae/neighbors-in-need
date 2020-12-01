@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Neighbors in Need</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- * Leaflet map API styling-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+  <!--*Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+  <!--* Custom stylesheet-->
+  <link href="stylesheets/style.css" rel="stylesheet">
+  <!-- *Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Quicksand:wght@300&display=swap" rel="stylesheet">
+  <!-- *Link to Font Awesome resource-->
+  <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
+  <!-- *Leaflet map API-->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+
+<body>
+  <!-- *The Navbar with 3 Day Weather Forecast and Logout -->
+  <!-- !navbar alignment breaks at  770px-->
+  <nav class="navbar container-fluid">
+    <img src="img/NIN-WIP.PNG" class="navbar-brand navbar-header"></img>
+    <ul class="nav navbar-nav space-over">
+        <li class="nav-item">
+            <div class="weather-bar day-0">
+                <img class="weather-icon"></img>
+                <p class="date"></p>
+                <p class="temp"></p>
+            </div>
+        </li>
+        <li class="nav-item">
+            <div class="weather-bar day-1">
+                <img class="weather-icon"></img>
+                <p class="date"></p>
+                <p class="temp"></p>
+            </div>
+        </li>
+        <li class="nav-item">
+            <div class="weather-bar day-2">
+                <img class="weather-icon"></img>
+                <p class="date"></p>
+                <p class="temp"></p>
+            </div>
+        </li>
+    </ul>
+    <div class="justify-content-end">
+        <i class="fas fa-sign-out-alt"></i>
+        <!-- <a class="logout" href="/logout"></a>   move this to js -->
+    </div>
+  </nav>
+
+  <!--Home made navbar alternative - turned out to be an equal pita and breaks at 998px-->
+  <!-- <div class="container-fluid">
+    <div class="row align-items-center my-auto"> -->
+        <!-- first col with img -->
+        <!-- <div class="col-4">
+            <img src="img/NIN-WIP.PNG" class="navbar-brand"></img>
+        </div> -->
+        <!-- second col with icon -->
+        <!-- <div class="col-1 weather-bar day-0">
+                <img class="weather-icon"></img>
+                <p class="date"></p>
+                <p class="temp"></p>
+        </div> -->
+        <!-- third col with icon -->
+        <!-- <div class="col-1 weather-bar day-1">
+                <img class="weather-icon"></img>
+                <p class="date"></p>
+                <p class="temp"></p>
+        </div> -->
+        <!-- fourth col with icon -->
+        <!-- <div class="col-1 weather-bar day-2">
+                <img class="weather-icon"></img>
+                <p class="date"></p>
+                <p class="temp"></p>
+        </div> -->
+        <!-- last col with signout -->
+        <!-- <div class="col-4">
+             move link to js? -->
+            <!-- <i class="fas fa-sign-out-alt"></i> 
+            <a class="logout" href="/logout"></a>   
+        </div>
+    </div>
+</div> -->
+
+  <!-- *Main Content -->
+  <div class="container-fluid">
+
+      <!-- *Row with Header -->
+    <div class="row justify-content-md-center">
+      <div class="col-md-6 col-md-offset-3">
+        <h2>Welcome <span class="member-name"></span></h2>
+      </div>
+    </div>
+    <!-- *Row for Map view -->
+    <div class="row justify-content-md-center">
+      <!-- ! JD -11/29 - Added id to map container-->
+        <div class="col-md-6 col-md-offset-3 map" id="map">
+            <!-- <img src="img/maps-placeholder.PNG" alt="maps placeholder" class="placeholder">  -->
+        </div>
+    </div>
+    <!-- *Add Post Button Row -->
+    <div class="row justify-content-md-center">
+      <!-- * JD - 11/24 - Commented out button and wrapper to differentiate for NIN view demo -->
+        <!-- <div class="col-md-6 col-md-offset-3">
+            <button type="button" class="btn-lg">Add New Post</button>
+        </div> -->
+    </div>
+    <!-- *List View: Will utilize handlebars to create dynamic lists pulled from our Goods & Services DB-->
+    <div class="row justify-content-md-center">
+        <div class="col-md-6 col-md-offset-3">
+            <!-- *Dummy data for layout purposes: do we click for description to see more info and keep the interface clean? -->
+            <table class="table table-responsive">
+                <thead>
+                  <tr>
+                    <th scope="col">Service Provided</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Description</th> <!--?Do we truncate for cleanliness of UI?-->
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Shelter</td>
+                    <td>Any</td>
+                    <td>123 Here Str.</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor..</td>
+                  </tr>
+                  <tr>
+                    <td>Clothing</td>
+                    <td>1:00PM - 3:00PM</td>
+                    <td>St Stephens Church, 456 Something Rd</td>
+                    <td>Socks and Winter Coats available on a first come first served basis at St. Stephens Church.</td>
+                  </tr>
+                  <tr>
+                    <td>Meals</td>
+                    <td>11:30AM - 1:30PM</td>
+                    <td>Richmond Community Center, 456 Something Rd</td>
+                    <td>Hot grilled cheese and soup provided at the Richmond Community Center.</td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </div> <!-- *end div for container-->
+
+  <!--* jQuery-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!--*Script Files-->
+  <script type="text/javascript" src="js/members.js"></script>
+  <script type="text/javascript" src="js/homescreen.js"></script>
+  <!--*Moment.js-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  
+
+</body>
+
+</html>
