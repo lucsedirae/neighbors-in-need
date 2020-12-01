@@ -51,6 +51,9 @@ $(document).ready(() => {
   function drawMap() {
     let events = [];
 
+    //*Creates the map on the HTML page using hardcoded coordinates for Richmond VA (our developmental stage focus area)
+    //?Can we create a search panel that allows user to choose their starting view? Should require an api query that posts new coordinates to the setView
+    //?when user searches for their preferred starting view
     const map = L.map("map").setView([37.5407, -77.436], 13);
     const locations = [];
 
@@ -67,6 +70,7 @@ $(document).ready(() => {
       }
     ).addTo(map);
 
+    //*Positionstack geocoding code
     const accessToken = "0a0c85b3c0a2dcab89f4744c3d376bd5";
     //! searchString needs to be redefined as the address coming out of SQL
     const searchString = "6610 Fernwood St Henrico, VA 23228";
@@ -79,7 +83,7 @@ $(document).ready(() => {
 
     $.ajax({
       url: queryURL,
-      method: "GET",
+      method: "GET"
     }).then(response => {
       const locObj = response.data[0];
       locations.locations.push({
