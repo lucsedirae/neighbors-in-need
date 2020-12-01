@@ -67,4 +67,18 @@ $(document).ready(() => {
       searchString +
       "&output=json";
   }
+
+ //! "get_started" toggles a drop down menu with all the form elements location, address, ect.. 
+  $("#get_started").on("click", function() {
+    $("#myDIV").toggle(500);
+  })
+
+//! CODE PUTS BOTH THE PASSWORD AND USERNAME IN LANDING.JS IN AN ARRAY AND/OR COLLECTS THE FORM DATA FROM HOMESCREENnin.html
+//! MARK 11/30
+  $('form').submit(function(event) {
+    event.preventDefault();
+    var form = $('form').serialize();
+    console.log(form.split('&'));
+  })
+  
 });
