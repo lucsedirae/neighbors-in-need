@@ -73,9 +73,8 @@ body{
   padding-left: 2px;
   padding-right: 2px;
 }
-
-.dropdown{
-  margin-bottom: 5px;
+.form-group{
+  margin-bottom:7px;
 }
 
 @media screen and (max-width: 450px) {
