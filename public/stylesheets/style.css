@@ -80,6 +80,9 @@ body {
   padding-left: 2px;
   padding-right: 2px;
 }
+.form-group{
+  margin-bottom:7px;
+}
 
 #map {
   position: absolute;
