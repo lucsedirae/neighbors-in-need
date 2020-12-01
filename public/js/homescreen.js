@@ -54,7 +54,7 @@ $(document).ready(() => {
     //?Can we create a search panel that allows user to choose their starting view? Should require an api query that posts new coordinates to the setView
     //?when user searches for their preferred starting view
     const map = L.map("map").setView([37.5407, -77.436], 13);
-    // const locations = [];
+    const locations = [];
 
     $.get("/api/events", data => {
       for (let i = 0; i < data.length; i++) {
@@ -65,12 +65,23 @@ $(document).ready(() => {
           longitude: data[i].longitude
         });
       }
+    }).then(() => {
+      for (let i = 0; i < locations.length; i++) {
+        const marker = L.marker([
+          locations[i].latitude,
+          locations[i].longitude
+        ]).addTo(map);
+        console.log(locations[i]);
+      }
     });
 
-    const locations = events.map(({ latitude, longitude }) => ({
-      latitude,
-      longitude
-    }));
+    // console.log(locations);
+    // console.log(locations[0]);
+
+    // const locations = events.map(({ latitude, longitude }) => ({
+    //   latitude,
+    //   longitude
+    // }));
 
     L.tileLayer(
       "https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=Utb4r10D6uLj3qIbPQGs",
@@ -80,7 +91,15 @@ $(document).ready(() => {
       }
     ).addTo(map);
 
-    console.log(locations);
+    // var marker = L.marker([locations[0].latitude, locations[0].longitude]).addTo(map);
+
+    for (let i = 0; i < locations.length; i++) {
+      let marker = L.marker([
+        locations[i].latitude,
+        locations[i].longitude
+      ]).addTo(map);
+      console.log(locations[i]);
+    };
 
     //*Positionstack geocoding code
     // const accessToken = "0a0c85b3c0a2dcab89f4744c3d376bd5";
@@ -91,7 +110,7 @@ $(document).ready(() => {
     //   accessToken +
     //   "&query=" +
     //   searchString +
-    //   "&output=json";
+    //   "&output=json";+
 
     // $.ajax({
     //   url: queryURL,
