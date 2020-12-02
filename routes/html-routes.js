@@ -8,7 +8,7 @@ module.exports = function(app) {
   app.get("/", (req, res) => {
     // *If the user already has an account send them to the members page if not send them to landing/login
     if (req.user) {
-      res.redirect("/homescreenCG");
+      res.redirect("/members.html");
     }
     res.sendFile(path.join(__dirname, "../public/landing.html"));
   });
@@ -24,7 +24,7 @@ module.exports = function(app) {
   // *Here we've add our isAuthenticated middleware to this route.
   // *If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/homescreenCG", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/homescreenCG.html"));
+    res.sendFile(path.join(__dirname, "../public/landing.html"));
   });
 
   //*This route displays the Neighbor In Need view that does not require user authentication
