@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+​
 <head>
   <title>Neighbors in Need</title>
   <meta charset="UTF-8">
@@ -14,7 +14,7 @@
   <!-- Link to Font Awesome resource-->
   <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
 </head>
-
+​
 <body>
   <!-- The Navbar with 3 Day Weather Forecast and Logout -->
   <!-- <nav class="navbar">
@@ -24,7 +24,7 @@
       <a class="logout" href="/logout"></a>   move this to js
     </div>
   </nav> -->
-
+​
   <div class="container-fluid">
     <div class="row align-items-center">
       <div class="col-xs-4">
@@ -35,7 +35,7 @@
       </div>
     </div>
   </div>
-
+​
   
   <!-- Main Content -->
   <div class="container-fluid">
@@ -73,9 +73,42 @@
     </div>
       <!-- Row for Map view -->
     <div class="row justify-content-md-center">
-        <div class="col-md-6 col-md-offset-3 map">
+    
+      <!-- ADDED NAME TO ALL THE TEXT INPUTS IN THE FORM ELEMENT -->
+      <!-- THIS IS TARGETED BY HOMESCREEN.JS -->
+      <!-- MARK -->
+    <div class="col-md-4 map">
+    <form class="login">
+          <div class="form-group">
+            <label for="Eventname">Event Name</label>
+            <input name="event" type="name" class="form-control" id="name-input" placeholder="Event Name">
+          </div>
+          <div class="form-group">
+            <label for="Address">Event Address</label>
+            <input name="address" type="text" class="form-control" id="address-input" placeholder="Event Address">
+          </div>
+          
+           <div class="form-group">
+            <label for="Address">Location</label>
+            <input name="location" type="text" class="form-control" id="longitude-input" placeholder="Latitude and Longitude">
+          </div>
+          
+          <div class="form-group">
+            <label for="Address">Time and description</label>
+            <input name="timeDescription" type="text" class="form-control" id="longitude-input" placeholder="Time and description">
+          </div>
+          
+          
+          
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+        <div class="col-md-4 map">
           <img src="img/maps-placeholder.PNG" alt="maps placeholder" class="placeholder"> 
       </div>
+      
+     
+    
     </div>
     <!-- Add Post Button Row -->
     <div class="row justify-content-md-center">
@@ -120,16 +153,16 @@
         </div>
     </div>
   </div> <!--end div for container-->
-
+​
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!--Script Files-->
   <script type="text/javascript" src="js/members.js"></script>
   <script type="text/javascript" src="js/homescreen.js"></script>
-
+​
   <!--Moment.js-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-
-
+​
+​
 </body>
-
+​
 </html>
