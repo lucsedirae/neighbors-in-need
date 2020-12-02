@@ -51,4 +51,13 @@ module.exports = function(app) {
       post: postdetails
     });
   });
+
+  app.get("/members", (req, res) => {
+    res.render("members");
+  });
+
+  app.get("/landing", (req, res) => {
+    res.render("landing");
+  });
+
 };
