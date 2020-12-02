@@ -11,9 +11,6 @@ $(document).ready(() => {
     window.location.replace("/homescreenNIN");
   });
 
-  let NINchecked = false;
-  let CGchecked = false;
-
   //if NIN radio is clicked hide the create account feilds
   $("#gridRadios1").click(() => {
     $("#hide").css({ opacity: 0 });
