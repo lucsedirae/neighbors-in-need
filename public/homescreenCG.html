@@ -16,19 +16,11 @@
 </head>
 ​
 <body>
-  <!-- The Navbar with 3 Day Weather Forecast and Logout -->
-  <!-- <nav class="navbar">
-    <img src="img/NIN-WIP.PNG" class="navbar-img navbar-brand"></img>
-    <div class="nav justify-content-end">
-      <i class="fas fa-sign-out-alt fa-lg"></i>
-      <a class="logout" href="/logout"></a>   move this to js
-    </div>
-  </nav> -->
-​
+<!-- Navbar with new image and logout -->
   <div class="container-fluid">
     <div class="row align-items-center">
       <div class="col-xs-4">
-        <img src="img/NIN-WIP.PNG" class="navbar-img navbar-brand"></img>
+        <img src="img/NINv2.png" class="navbar-img navbar-brand"></img>
       </div>
       <div class="col-xs-3 col-xs-offset-5">
         <i class="fas fa-sign-out-alt fa-lg"></i>
@@ -79,33 +71,33 @@
       <!-- MARK -->
     <div class="col-md-4 map">
     <form class="login">
-          <div class="form-group">
-            <label for="Eventname">Event Name</label>
-            <input name="event" type="name" class="form-control" id="name-input" placeholder="Event Name">
-          </div>
-          <div class="form-group">
-            <label for="Address">Event Address</label>
-            <input name="address" type="text" class="form-control" id="address-input" placeholder="Event Address">
-          </div>
-          
-           <div class="form-group">
-            <label for="Address">Location</label>
-            <input name="location" type="text" class="form-control" id="longitude-input" placeholder="Latitude and Longitude">
-          </div>
-          
-          <div class="form-group">
-            <label for="Address">Time and description</label>
-            <input name="timeDescription" type="text" class="form-control" id="longitude-input" placeholder="Time and description">
-          </div>
-          
-          
-          
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
+      <div class="form-group">
+        <label for="Eventname">Event Name</label>
+        <input name="event" type="name" class="form-control" id="name-input" placeholder="Event Name">
+      </div>
+      <div class="form-group">
+        <label for="Address">Event Address</label>
+        <input name="address" type="text" class="form-control" id="address-input" placeholder="Event Address">
+      </div>
+      
+        <div class="form-group">
+        <label for="Address">Location</label>
+        <input name="location" type="text" class="form-control" id="longitude-input" placeholder="Latitude and Longitude">
+      </div>
+      
+      <div class="form-group">
+        <label for="Address">Time and description</label>
+        <input name="timeDescription" type="text" class="form-control" id="longitude-input" placeholder="Time and description">
+      </div>
+      
+      
+      
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
     </div>
         <div class="col-md-4 map">
           <img src="img/maps-placeholder.PNG" alt="maps placeholder" class="placeholder"> 
-      </div>
+    </div>
       
      
     
@@ -123,30 +115,19 @@
             <table class="table table-responsive">
                 <thead>
                   <tr>
-                    <th scope="col">Service Provided</th>
-                    <th scope="col">Time</th>
                     <th scope="col">Location</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Time</th>
                     <th scope="col">Description</th> <!-- Do we truncate for cleanliness of UI?-->
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
+                    <!-- how to include this with handlebars -->
                     <td>Shelter</td>
                     <td>Any</td>
                     <td>123 Here Str.</td>
                     <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor..</td>
-                  </tr>
-                  <tr>
-                    <td>Clothing</td>
-                    <td>1:00PM - 3:00PM</td>
-                    <td>St Stephens Church, 456 Something Rd</td>
-                    <td>Socks and Winter Coats available on a first come first served basis at St. Stephens Church.</td>
-                  </tr>
-                  <tr>
-                    <td>Meals</td>
-                    <td>11:30AM - 1:30PM</td>
-                    <td>Richmond Community Center, 456 Something Rd</td>
-                    <td>Hot grilled cheese and soup provided at the Richmond Community Center.</td>
                   </tr>
                 </tbody>
             </table>
