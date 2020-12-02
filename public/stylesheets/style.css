@@ -2,90 +2,110 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
-.btn-lg{
+.btn-lg {
   background-color: rgb(209, 209, 209);
   margin: 5px;
 }
-.container-fluid, .navbar{
+.container-fluid,
+.navbar {
   text-align: center;
   background-color: rgba(255, 255, 255, 0.548);
   margin: 25px;
   border-radius: 15px;
   color: black;
 }
-.table{
+.table {
   color: black;
 }
-.login-link{
+.login-link {
   color: rgb(0, 28, 155);
   text-decoration: underline;
 }
-form{
+form {
   text-align: left;
 }
-.form-check{
+.form-check {
   margin-bottom: 5px;
 }
 /*Navbar stuff */
-.navbar-img{
-   width: 200px;
-   height: 97.5px;
+.navbar-img {
+  width: 200px;
+  height: 97.5px;
 }
-.weather-icon{
+.weather-icon {
   margin-top: 2px;
   width: 50px;
 }
-.date, .temp{
+.date,
+.temp {
   /* font-size: 60%; */
   text-align: center;
   margin-bottom: 1px;
 }
-.space-over{
-  margin-left:120px;
+.space-over {
+  margin-left: 120px;
 }
-.fas{
+.fas {
   margin-top: 30px;
 }
-h2{
+h2 {
   margin-top: 10px;
 }
 h3 {
   font-size: medium;
 }
-legend{
+legend {
   font-size: medium;
   margin-left: 10px;
 }
 /*  */
 
-body{
-  font-family: 'Quicksand', sans-serif;
-  background: rgb(0,0,0);
-  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(168,219,177,1) 50%, rgba(223,223,223,1) 100%);
+body {
+  font-family: "Quicksand", sans-serif;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(168, 219, 177, 1) 50%,
+    rgba(223, 223, 223, 1) 100%
+  );
   background-size: 100%;
 }
-.placeholder{
+.placeholder {
   margin: 5px;
   width: 300px;
 }
 
-.col-sm-1{
+.col-sm-1 {
   padding-left: 2px;
   padding-right: 2px;
 }
+.form-group{
+  margin-bottom:7px;
+}
+
+#map {
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 
 @media screen and (max-width: 450px) {
-  .navbar-img{
+  .navbar-img {
     width: 150px;
     height: 73px;
     padding: 10px;
- }
+  }
 
-  .date, .temp{
+  .date,
+  .temp {
     text-align: center;
   }
-  p{
+  p {
     margin-bottom: 2px;
   }
-  
 }
