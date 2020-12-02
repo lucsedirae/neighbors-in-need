@@ -107,9 +107,31 @@
     <!-- *Add Post Button Row -->
     <div class="row justify-content-md-center">
       <!-- * JD - 11/24 - Commented out button and wrapper to differentiate for NIN view demo -->
-        <!-- <div class="col-md-6 col-md-offset-3">
-            <button type="button" class="btn-lg">Add New Post</button>
-        </div> -->
+      
+      <!-- THIS IS THE FORM ELEMENTS FOR CREATING EVENTS-->
+      <!-- IT ALSO HAS A BUTTON THAT HIDES "myDIV" until pressed -->
+      <!-- MARK 11/30 -->
+         <div class="col-md-6 col-md-offset-3">
+          <button type="submit" id="get_started" class="btn-sm">Add New Post</button>
+          <div id="myDIV">
+            <form class="event_info" id="form"> 
+              <label for="location">Location</label>
+              <input name="location" type="text"> 
+              <br>
+              <label for="address">address</label>
+              <input name="address" type="text">
+              <br>
+              <label for="time">time</label>
+              <input name= "time" type="text"> 
+              <br>
+              <label for="description">description</label>
+              <input name="description" type="text"> 
+              <br>
+              <!-- <input type="submit"> -->
+            
+            <button type="submit" class="btn-lg">Add New Post</button>
+          </form>
+        </div> 
     </div>
     <!-- *List View: Will utilize handlebars to create dynamic lists pulled from our Goods & Services DB-->
     <div class="row justify-content-md-center">
