@@ -22,7 +22,8 @@ module.exports = function(app) {
     // *If the user already has an account send them to the homescreenCG page, otherwise route to login.html 
     if (req.user) {
       //res.redirect("/homescreenCG");
-      res.render("homescreenCG");
+      //post is the name of the object being passed into the handlebars template
+      res.render("homescreenCG", post);
     }
     //res.sendFile(path.join(__dirname, "../public/login.html"));
     res.render("landing");
@@ -32,12 +33,12 @@ module.exports = function(app) {
   // *If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/homescreenCG", isAuthenticated, (req, res) => {
     //res.sendFile(path.join(__dirname, "../public/homescreenCG.html"));
-    res.render("homescreenCG");
+    res.render("homescreenCG", post);
   });
 
   //*This route displays the Neighbor In Need view that does not require user authentication
   app.get("/homescreenNIN", (req, res) => {
     //res.sendFile(path.join(__dirname, "../public/homescreenNIN.html"));
-    res.render("homescreenNIN");
+    res.render("homescreenNIN", post);
   });
 };
