@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-​
+
 <head>
   <title>Neighbors in Need</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- * Leaflet map API styling-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+  <!--*Bootstrap-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+  <!--* Custom stylesheet-->
   <link href="stylesheets/style.css" rel="stylesheet">
+  <!-- *Google Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Quicksand:wght@300&display=swap" rel="stylesheet">
-  
-  <!-- Link to Font Awesome resource-->
+  <!-- *Link to Font Awesome resource-->
   <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
+  <!-- *Leaflet map API-->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 </head>
-​
+
 <body>
 <!-- Navbar with new image and logout -->
-  <div class="container-fluid">
-    <div class="row align-items-center">
-      <div class="col-xs-4">
-        <img src="img/NINv2.png" class="navbar-img navbar-brand"></img>
-      </div>
-      <div class="col-xs-3 col-xs-offset-5">
-        <i class="fas fa-sign-out-alt fa-lg"></i>
-      </div>
+<div class="container-fluid">
+  <div class="row align-items-center">
+    <div class="col-xs-4">
+      <img src="img/NINv2.png" class="navbar-img navbar-brand"></img>
     </div>
   </div>
-​
-  
-  <!-- Main Content -->
+</div>
+
+  <!-- *Main Content -->
   <div class="container-fluid">
-    <!-- Row with Header -->
+
+      <!-- *Row with Header -->
     <div class="row justify-content-md-center">
       <div class="col-md-6 col-md-offset-3">
         <h2>Welcome <span class="member-name"></span></h2>
@@ -63,55 +65,18 @@
         </div>
       </div>
     </div>
-      <!-- Row for Map view -->
+    <!-- *Row for Map view -->
     <div class="row justify-content-md-center">
-    
-      <!-- ADDED NAME TO ALL THE TEXT INPUTS IN THE FORM ELEMENT -->
-      <!-- THIS IS TARGETED BY HOMESCREEN.JS -->
-      <!-- MARK -->
-    <div class="col-md-4 map">
-    <form class="login">
-      <div class="form-group">
-        <label for="Eventname">Event Name</label>
-        <input name="event" type="name" class="form-control" id="name-input" placeholder="Event Name">
+      <!-- ! JD -11/29 - Added id to map container-->
+      <div class="col-md-6 map" id="map">
+          <!-- <img src="img/maps-placeholder.PNG" alt="maps placeholder" class="placeholder">  -->
       </div>
-      <div class="form-group">
-        <label for="Address">Event Address</label>
-        <input name="address" type="text" class="form-control" id="address-input" placeholder="Event Address">
-      </div>
-      
-        <div class="form-group">
-        <label for="Address">Location</label>
-        <input name="location" type="text" class="form-control" id="longitude-input" placeholder="Latitude and Longitude">
-      </div>
-      
-      <div class="form-group">
-        <label for="Address">Time and description</label>
-        <input name="timeDescription" type="text" class="form-control" id="longitude-input" placeholder="Time and description">
-      </div>
-      
-      
-      
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form>
     </div>
-        <div class="col-md-4 map">
-          <img src="img/maps-placeholder.PNG" alt="maps placeholder" class="placeholder"> 
-    </div>
-      
-     
-    
-    </div>
-    <!-- Add Post Button Row -->
+
+    <!-- *List View: Will utilize handlebars to create dynamic lists pulled from our Goods & Services DB-->
     <div class="row justify-content-md-center">
         <div class="col-md-6 col-md-offset-3">
-            <button type="button" class="btn-lg">Add New Post</button>
-        </div>
-    </div>
-    <!-- List View: Will utilize handlebars to create dynamic lists pulled from our Goods & Services DB-->
-    <div class="row justify-content-md-center">
-        <div class="col-md-6 col-md-offset-3">
-            <!-- Dummy data for layout purposes: do we click for description to see more info and keep the interface clean? -->
+            <!-- *Dummy data for layout purposes: do we click for description to see more info and keep the interface clean? -->
             <table class="table table-responsive">
                 <thead>
                   <tr>
@@ -133,17 +98,17 @@
             </table>
         </div>
     </div>
-  </div> <!--end div for container-->
-​
+  </div> <!-- *end div for container-->
+
+  <!--* jQuery-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!--Script Files-->
+  <!--*Script Files-->
   <script type="text/javascript" src="js/members.js"></script>
   <script type="text/javascript" src="js/homescreen.js"></script>
-​
-  <!--Moment.js-->
+  <!--*Moment.js-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-​
-​
+  
+
 </body>
-​
+
 </html>

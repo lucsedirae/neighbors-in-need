@@ -1,27 +1,19 @@
-  <!-- The Navbar with 3 Day Weather Forecast and Logout -->
-  <!-- <nav class="navbar">
-    <img src="img/NIN-WIP.PNG" class="navbar-img navbar-brand"></img>
-    <div class="nav justify-content-end">
-      <i class="fas fa-sign-out-alt fa-lg"></i>
-      <a class="logout" href="/logout"></a>   move this to js
+ <!-- Navbar with new image and logout -->
+<div class="container-fluid">
+  <div class="row align-items-center">
+    <div class="col-xs-4">
+      <img src="img/NINv2.png" class="navbar-img navbar-brand"></img>
     </div>
-  </nav> -->
-
-  <div class="container-fluid">
-    <div class="row align-items-center">
-      <div class="col-xs-4">
-        <img src="img/NINv2.png" class="navbar-img navbar-brand"></img>
-      </div>
-      <div class="col-xs-3 col-xs-offset-5">
-        <i class="fas fa-sign-out-alt fa-lg"></i>
-      </div>
+    <div class="col-xs-3 col-xs-offset-5">
+      <i class="fas fa-sign-out-alt fa-lg"></i>
     </div>
   </div>
+</div>
 
-  
-  <!-- Main Content -->
+  <!-- *Main Content -->
   <div class="container-fluid">
-    <!-- Row with Header -->
+
+      <!-- *Row with Header -->
     <div class="row justify-content-md-center">
       <div class="col-md-6 col-md-offset-3">
         <h2>Welcome <span class="member-name"></span></h2>
@@ -53,52 +45,69 @@
         </div>
       </div>
     </div>
-      <!-- Row for Map view -->
+    <!-- *Row for Map view -->
     <div class="row justify-content-md-center">
-        <div class="col-md-6 col-md-offset-3 map">
-          <img src="img/maps-placeholder.PNG" alt="maps placeholder" class="placeholder"> 
+      <!-- ! JD -11/29 - Added id to map container-->
+      <div class="col-md-6 map" id="map">
+          <!-- <img src="img/maps-placeholder.PNG" alt="maps placeholder" class="placeholder">  -->
       </div>
     </div>
-    <!-- Add Post Button Row -->
+    <!-- *Add Post Button Row -->
     <div class="row justify-content-md-center">
-        <div class="col-md-6 col-md-offset-3">
-            <button type="button" class="btn-lg">Add New Post</button>
+      <!-- * JD - 11/24 - Commented out button and wrapper to differentiate for NIN view demo -->
+      
+      <!-- THIS IS THE FORM ELEMENTS FOR CREATING EVENTS-->
+      <!-- IT ALSO HAS A BUTTON THAT HIDES "myDIV" until pressed -->
+      <!-- MARK 11/30 -->
+         <div class="col-md-6 col-md-offset-3">
+           <div id="myDIV">
+             <form class="event_info" id="form"> 
+              <div class="form-group">
+                <label for="location">Location:</label>
+                <input name="location" type="text" class="form-control" placeholder="Ex. Richmond Community Center"> 
+              </div>
+              <div class="form-group">
+                <label for="address">Address:</label>
+                <input name="address" type="text" class="form-control" placeholder="Ex. 1234 Road Str Richmond, Va 23220">
+              </div>
+              <div class="form-group">
+                <label for="time">Time:</label>
+                <input name= "time" type="text" class="form-control" placeholder="Ex. 11:00AM"> 
+              </div>
+              <div class="form-group">
+                <label for="description">Description:</label>
+                <!-- <input name="description" type="text" class="form-control" rows="3" placeholder="Ex. Hot lunch provided from 11 - 2pm. First come, first served."> -->
+                <textarea name="description" type="text" class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Ex. Hot lunch provided from 11 - 2pm. First come, first served."></textarea> 
+              </div>              
+            </form>
+            <button type="submit" class="btn-lg">Add New Post</button>
+          </div> <!--this div toggles and is hidden when "get-started" is clicked-->
+          <button type="submit" id="get_started" class="btn-md">Toggle Add Post Fields</button>
         </div>
     </div>
-    <!-- List View: Will utilize handlebars to create dynamic lists pulled from our Goods & Services DB-->
+    <!-- *List View: Will utilize handlebars to create dynamic lists pulled from our Goods & Services DB-->
     <div class="row justify-content-md-center">
         <div class="col-md-6 col-md-offset-3">
-            <!-- Dummy data for layout purposes: do we click for description to see more info and keep the interface clean? -->
+            <!-- *Dummy data for layout purposes: do we click for description to see more info and keep the interface clean? -->
             <table class="table table-responsive">
                 <thead>
                   <tr>
-                    <th scope="col">Service Provided</th>
-                    <th scope="col">Time</th>
                     <th scope="col">Location</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Time</th>
                     <th scope="col">Description</th> <!-- Do we truncate for cleanliness of UI?-->
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
+                    <!-- how to include this with handlebars -->
                     <td>Shelter</td>
                     <td>Any</td>
                     <td>123 Here Str.</td>
                     <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor..</td>
                   </tr>
-                  <tr>
-                    <td>Clothing</td>
-                    <td>1:00PM - 3:00PM</td>
-                    <td>St Stephens Church, 456 Something Rd</td>
-                    <td>Socks and Winter Coats available on a first come first served basis at St. Stephens Church.</td>
-                  </tr>
-                  <tr>
-                    <td>Meals</td>
-                    <td>11:30AM - 1:30PM</td>
-                    <td>Richmond Community Center, 456 Something Rd</td>
-                    <td>Hot grilled cheese and soup provided at the Richmond Community Center.</td>
-                  </tr>
                 </tbody>
             </table>
         </div>
     </div>
-  </div> <!--end div for container-->
+  </div> <!-- *end div for container-->
