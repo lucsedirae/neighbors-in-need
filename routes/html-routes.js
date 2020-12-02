@@ -6,6 +6,7 @@ const path = require("path");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 //do we need to pull the data from the db in this file and push to an array of objects postdetails?
+//Logic from Wk 13 Act 4 line 36 server.js
 //const postdetails = [];
 
 module.exports = function(app) {
