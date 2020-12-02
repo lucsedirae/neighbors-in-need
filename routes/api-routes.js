@@ -51,6 +51,7 @@ module.exports = function(app) {
     }
   });
 
+  //* Retrieves event infromation from sql db
   app.get("/api/events", (req, res) => {
     db.eventLocation.findAll({}).then(event => {
       res.json(event);
