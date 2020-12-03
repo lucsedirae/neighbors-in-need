@@ -10,7 +10,7 @@ module.exports = function(app) {
     // *Sending back a password, even a hashed password, isn't a good idea
     res.json({
       email: req.user.email,
-      id: req.user.id,
+      id: req.user.id
     });
   });
 
@@ -51,7 +51,7 @@ module.exports = function(app) {
     }
   });
 
-  //* Retrieves event infromation from sql db
+    //* Retrieves event infromation from sql db
   app.get("/api/events", (req, res) => {
     db.eventLocation.findAll({}).then(event => {
       res.json(event);
