@@ -1,5 +1,5 @@
--- DROP DATABASE IF EXISTS nin_db;
--- CREATE DATABASE nin_db;
+DROP DATABASE IF EXISTS nin_db;
+CREATE DATABASE nin_db;
 USE nin_db;
 
 CREATE TABLE eventlocations (
