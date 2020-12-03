@@ -19,7 +19,7 @@
   <!-- *Leaflet map API-->
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 </head>
-
+<style>#map {visibility: hidden;}</style>
 <body>
 <!-- Navbar with new image and logout -->
 <div class="container-fluid">
@@ -118,17 +118,10 @@
                     <th scope="col">Location</th>
                     <th scope="col">Address</th>
                     <th scope="col">Time</th>
-                    <th scope="col">Description</th> <!-- Do we truncate for cleanliness of UI?-->
+                    <th scope="col">Description</th> <!--?Do we truncate for cleanliness of UI?-->
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <!-- how to include this with handlebars -->
-                    <td>Shelter</td>
-                    <td>Any</td>
-                    <td>123 Here Str.</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor..</td>
-                  </tr>
+                <tbody id="info-table">
                 </tbody>
             </table>
         </div>

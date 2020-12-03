@@ -28,7 +28,6 @@ $(document).ready(() => {
     $("#hide-go").hide();
   });
 
-
   // click event to gather form info, for username and password
   // IF YOU UNCOMMENT THIS CODE YOU WILL GET DUPLICATES, THE SAME FUNCTION IS BEING RUN IN HOMESCREEN.JS 
   // Mark 11/30
