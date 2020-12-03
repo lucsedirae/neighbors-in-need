@@ -3,15 +3,17 @@
 $(document).ready(() => {
   //hide create account fields and go button initially
   function init(){
-    $("#hide").toggle(500);
-    $("#hide-button").toggle(500);
-    $("#hide-go").toggle(500);
+    $("#hide").hide();
+    $("#hide-button").hide();
+    $("#hide-go").hide();
   };
   init();
 
   //if NIN radio is clicked hide the create account feilds
   $("#gridRadios1").click(() => {
-    $("#hide-go").toggle(500);
+    $("#hide-go").show();
+    $("#hide").hide();
+    $("#hide-button").hide();
   });
 
   $("#go-homescreen").click(() => {
@@ -21,8 +23,9 @@ $(document).ready(() => {
 
   //if the CG radio is clicked show the create account fields
   $("#gridRadios2").click(() => {
-    $("#hide").toggle(500);
-    $("#hide-button").toggle(500);
+    $("#hide").show();
+    $("#hide-button").show();
+    $("#hide-go").hide();
   });
 
 
