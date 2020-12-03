@@ -1,13 +1,12 @@
 // *Requiring path to so we can use relative routes to our HTML files
 //Mel 12/1 - is this necessary with handlebars?
 const path = require("path");
+const db = require("../models");
 
 // *Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
-//do we need to pull the data from the db in this file and push to an array of objects postdetails?
-//Logic from Wk 13 Act 4 line 36 server.js
-//const postdetails = [];
+
 
 module.exports = function(app) {
   app.get("/", (req, res) => {

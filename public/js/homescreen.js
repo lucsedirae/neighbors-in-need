@@ -101,6 +101,19 @@ $(document).ready(() => {
       console.log(locations[i]);
     };
 
+    const postdetails = [];
+    //Get request to populate tables through handlebars
+    $.get("/api/events", data => {
+      for (let i = 0; i < data.length; i++) {
+        postdetails.push({
+          location: data[i].location,
+          address: data[i].address,
+          eventTime: data[i].eventTime,
+          eventDescription: data[i].eventDescription
+        });
+      }
+    })
+
     //*Positionstack geocoding code
     // const accessToken = "0a0c85b3c0a2dcab89f4744c3d376bd5";
     // //! searchString needs to be redefined as the address coming out of SQL
@@ -128,7 +141,7 @@ $(document).ready(() => {
  //! "get_started" toggles a drop down menu with all the form elements location, address, ect.. 
   $("#get_started").on("click", function() {
     $("#myDIV").toggle(500);
-  })
+  });
 
 //! CODE PUTS BOTH THE PASSWORD AND USERNAME IN LANDING.JS IN AN ARRAY AND/OR COLLECTS THE FORM DATA FROM HOMESCREENnin.html
 //! MARK 11/30
@@ -139,4 +152,6 @@ $(document).ready(() => {
   })
   
   drawMap();
+
+
 });

@@ -73,7 +73,7 @@ body {
     rgba(168, 219, 177, 1) 50%,
     rgba(223, 223, 223, 1) 100%
   );
-  background-size: 100%;
+  background-size: 100vh;
 }
 
 .col-sm-1 {
