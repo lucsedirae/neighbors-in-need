@@ -23,18 +23,6 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
   
-  // const postdetails = [];
-  // //Get request to populate tables through handlebars
-  // $.get("/api/events", data => {
-  //   for (let i = 0; i < data.length; i++) {
-  //     postdetails.push({
-  //       location: data[i].location,
-  //       address: data[i].address,
-  //       eventTime: data[i].eventTime,
-  //       eventDescription: data[i].eventDescription
-  //     });
-  //   }
-  // });
 
   return EventLocation;
 

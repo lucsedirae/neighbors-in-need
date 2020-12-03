@@ -22,6 +22,14 @@ module.exports = function(app) {
   });
 
   app.get("/login", (req, res) => {
+    // let postdetails = [];
+
+    // app.get("/api/events", (req, res) => {
+    //   db.eventLocation.findAll({}).then(event => {
+    //     res.json(event);
+    //   });
+    // });
+    
     // *If the user already has an account send them to the homescreenCG page, otherwise route to login.html 
     if (req.user) {
       //res.redirect("/homescreenCG");
@@ -29,6 +37,8 @@ module.exports = function(app) {
       res.render("homescreenCG", {
         post: postdetails
       });
+
+      
     }
     //res.sendFile(path.join(__dirname, "../public/login.html"));
     res.render("landing");
