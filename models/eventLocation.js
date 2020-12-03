@@ -30,5 +30,8 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: 0.000000
     }
   });
+  
+
   return EventLocation;
+
 };

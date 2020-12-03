@@ -96,6 +96,19 @@ $(document).ready(() => {
       }
     });
 
+    const postdetails = [];
+    //Get request to populate tables through handlebars
+    $.get("/api/events", data => {
+      for (let i = 0; i < data.length; i++) {
+        postdetails.push({
+          location: data[i].location,
+          address: data[i].address,
+          eventTime: data[i].eventTime,
+          eventDescription: data[i].eventDescription
+        });
+      }
+    })
+
     //*Positionstack geocoding code
     //! JD 12/2 - Currently commented out until form submission validation is connected
     // const accessToken = "0a0c85b3c0a2dcab89f4744c3d376bd5";
@@ -134,4 +147,6 @@ $(document).ready(() => {
   });
 
   drawMap();
+
+
 });

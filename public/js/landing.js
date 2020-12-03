@@ -1,12 +1,31 @@
+//const { initialize } = require("passport");
+
 $(document).ready(() => {
-  //*Listener that handles the login button request routing user to the /login path
-  $("#login-button").click(() => {
-    console.log("Success!");
-    window.location.replace("/login");
+  //hide create account fields and go button initially
+  function init(){
+    $("#hide").hide();
+    $("#hide-button").hide();
+    $("#hide-go").hide();
+  };
+  init();
+
+  //if NIN radio is clicked hide the create account feilds
+  $("#gridRadios1").click(() => {
+    $("#hide-go").show();
+    $("#hide").hide();
+    $("#hide-button").hide();
   });
 
-  $("#NIN-button").click(() => {
+  $("#go-homescreen").click(() => {
+    // console.log("Success!");
     window.location.replace("/homescreenNIN");
+  });
+
+  //if the CG radio is clicked show the create account fields
+  $("#gridRadios2").click(() => {
+    $("#hide").show();
+    $("#hide-button").show();
+    $("#hide-go").hide();
   });
 
   // click event to gather form info, for username and password
