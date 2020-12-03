@@ -10,15 +10,15 @@ const isAuthenticated = require("../config/middleware/isAuthenticated");
 //Logic from Wk 13 Act 4 line 36 server.js
 const postdetails = [];
 
+
 module.exports = function(app) {
   app.get("/", (req, res) => {
     // *If the user already has an account send them to the members page if not send them to landing/login
     if (req.user) {
       // renders members.handlebars if user has account
-      res.render("members");
+      res.render("members"); 
     }
     // res.sendFile(path.join(__dirname, "../public/landing.html"));
-
     //otherwise renders create login/landing
     res.render("landing");
   });
@@ -58,7 +58,9 @@ module.exports = function(app) {
     res.render("members");
   });
 
+
   app.get("/landing", (req, res) => {
     res.render("landing");
   });
+
 };
