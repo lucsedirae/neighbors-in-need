@@ -2,15 +2,17 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
-.btn-lg {
+.btn-lg, .btn-md {
   background-color: rgb(209, 209, 209);
   margin: 5px;
+  border-radius:15px;
+
 }
 .container-fluid,
 .navbar {
   text-align: center;
   background-color: rgba(255, 255, 255, 0.548);
-  margin: 25px;
+  margin: 15px;
   border-radius: 15px;
   color: black;
 }
@@ -35,6 +37,8 @@ form {
 .weather-icon {
   margin-top: 2px;
   width: 50px;
+  background-color: rgb(168, 219, 177);
+  border-radius: 15px;
 }
 .date,
 .temp {
@@ -58,7 +62,7 @@ legend {
   font-size: medium;
   margin-left: 10px;
 }
-/*  */
+
 
 body {
   font-family: "Quicksand", sans-serif;
@@ -69,29 +73,22 @@ body {
     rgba(168, 219, 177, 1) 50%,
     rgba(223, 223, 223, 1) 100%
   );
-  background-size: 100%;
-}
-.placeholder {
-  margin: 5px;
-  width: 300px;
+  background-size: 100vh;
 }
 
 .col-sm-1 {
   padding-left: 2px;
   padding-right: 2px;
 }
-.form-group{
-  margin-bottom:7px;
+.form-group {
+  margin-bottom: 7px;
 }
 
-#map {
-  position: absolute;
-  width: 40%;
-  height: 40%;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+.map {
+  content: "";
+  width: 80vw;
+  height: 40vh;
+  margin-left: 8vw;
 }
 
 @media screen and (max-width: 450px) {
@@ -107,5 +104,12 @@ body {
   }
   p {
     margin-bottom: 2px;
+  }
+  .map {
+    content: "";
+    width: 78vw;
+    height: 40vh;
+    margin-left: 7vw;
+    margin-bottom: 1vw;
   }
 }

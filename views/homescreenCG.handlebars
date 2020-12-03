@@ -1,27 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <title>Neighbors in Need</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- * Leaflet map API styling-->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
-  <!--*Bootstrap-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <!--* Custom stylesheet-->
-  <link href="stylesheets/style.css" rel="stylesheet">
-  <!-- *Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Quicksand:wght@300&display=swap" rel="stylesheet">
-  <!-- *Link to Font Awesome resource-->
-  <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
-  <!-- *Leaflet map API-->
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-</head>
-<style>#map {visibility: hidden;}</style>
-<body>
-<!-- Navbar with new image and logout -->
+ <!-- Navbar with new image and logout -->
 <div class="container-fluid">
   <div class="row align-items-center">
     <div class="col-xs-4">
@@ -118,25 +95,22 @@
                     <th scope="col">Location</th>
                     <th scope="col">Address</th>
                     <th scope="col">Time</th>
-                    <th scope="col">Description</th> <!--?Do we truncate for cleanliness of UI?-->
+                    <th scope="col">Description</th> <!-- Do we truncate for cleanliness of UI?-->
                   </tr>
                 </thead>
-                <tbody id="info-table">
+                <tbody>
+                  <tr>
+                    <!-- post is the name of the object being passed into the handlebars template -->
+                    {{#each post}}
+                    {{!-- each td below cooresponds to a porperty in the object post --}}
+                    <td>{{location}}</td>
+                    <td>{{address}}</td>
+                    <td>{{eventTime}}}}</td>
+                    <td>{{eventDescription}}</td>
+                    {{/each}}
+                  </tr>
                 </tbody>
             </table>
         </div>
     </div>
   </div> <!-- *end div for container-->
-
-  <!--* jQuery-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!--*Script Files-->
-  <script type="text/javascript" src="js/members.js"></script>
-  <script type="text/javascript" src="js/homescreen.js"></script>
-  <!--*Moment.js-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  
-
-</body>
-
-</html>

@@ -11,6 +11,14 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       defaultValue: "None"
     },
+    eventDescription: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: "None"
+    },
+    eventTime: {
+      type: DataTypes.DATE(0)
+    },
     latitude: {
       type: DataTypes.DECIMAL(8, 6),
       allowNull: false,
@@ -22,5 +30,8 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: 0.000000
     }
   });
+  
+
   return EventLocation;
+
 };

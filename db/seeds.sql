@@ -9,10 +9,3 @@ INSERT INTO eventlocations (location, address, eventDescription, eventTime, lati
 INSERT INTO eventlocations (location, address, eventDescription, eventTime, latitude, longitude, createdAt, updatedAt) VALUES ('Safe Haven','2864 Hull ST Richmond, VA', "Shelter available", "2020-12-15 17:00:00", 37.510510, -77.459890, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
 
 INSERT INTO eventlocations (location, address, eventDescription, eventTime, latitude, longitude, createdAt, updatedAt) VALUES ('The Healing Place','700 Dinwiddie Avenue Richmond, VA', "Shelter available", "2020-12-15 17:00:00", 37.517552, -77.434320, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
- 
-
-  The Salvation Army Area Command, 2 West Grace street,
-  Virginia Supportive Housing, 8002 Discovery Drive #201
-  Liberation Veteran Services, 1201 Hull street
-  Shepards Way Relief Center
-  Rondal Mcdonald House Charaties of Richmond, 2330 Monument Avenue -->
