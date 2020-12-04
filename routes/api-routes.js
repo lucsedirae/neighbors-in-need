@@ -11,6 +11,8 @@ module.exports = function(app) {
     res.json({
       email: req.user.email,
       id: req.user.id
+    }).then(() => {
+      res.render("homescreenCG");
     });
   });
 
@@ -23,7 +25,7 @@ module.exports = function(app) {
       password: req.body.password
     })
       .then(() => {
-        res.redirect(307, "/api/login");
+        res.redirect(307, "/homescreenCG");
       })
       .catch(err => {
         res.status(401).json(err);
@@ -51,16 +53,15 @@ module.exports = function(app) {
     }
   });
 
-    //* Retrieves event infromation from sql db
+   //* Retrieves event infromation from sql db
   app.get("/api/events", (req, res) => {
     db.eventLocation.findAll({}).then(event => {
       res.json(event);
     });
   });
 
-  app.post("/api/newEvent", (req, res) => {
-    db.eventLocation.create({
-      
-    });
-  })
+//   app.post("/api/newEvent", (req, res) => {
+//     db.eventLocation.create({
+//   });
+//   })
 };

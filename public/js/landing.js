@@ -28,6 +28,46 @@ $(document).ready(() => {
     $("#hide-go").hide();
   });
 
+  //*Listener that handles the login button request routing user to the /login path
+  $("#login-button").click(() => {
+    const existingUser = {
+      email: $("#username-login").val().trim(),
+      password: $("#inputPassword4").val().trim()
+    };
+    if (!existingUser.email || !existingUser.password) {
+      return;
+    }
+
+    $.ajax({
+      url: "/api/login",
+      data: existingUser,
+      type: "POST",
+      success: () => {
+        console.log("success");
+      }
+    }).then(() => {
+      $.get("/homescreenCG", data => {
+        console.log("Please god let this work");
+      });
+    });
+  });
+
+  $("#signup-button").click(() => {
+    const newUser = {
+      email: $("#new-email").val().trim(),
+      password: $("#inputPassword3").val().trim()
+    };
+    console.log(newUser);
+
+    $.ajax({
+      url: "/api/signup",
+      data: newUser,
+      type: "POST",
+      success: () => {
+        console.log("success");
+      }
+    });
+  });
   // click event to gather form info, for username and password
   // IF YOU UNCOMMENT THIS CODE YOU WILL GET DUPLICATES, THE SAME FUNCTION IS BEING RUN IN HOMESCREEN.JS 
   // Mark 11/30
@@ -36,5 +76,4 @@ $(document).ready(() => {
   //   event.preventDefault();
   //   var form = $('form').serialize();
   //   console.log(form.split('&'));
-  // })
 });

@@ -20,16 +20,14 @@ module.exports = function(app) {
   });
 
   app.get("/login", (req, res) => {
-
     // *If the user already has an account send them to the homescreenCG page, otherwise route to login.html
     if (req.user) {
       //res.redirect("/homescreenCG");
       //postdetails would be an array with the objects with the details included
       res.render("homescreenCG", {
-        post: postdetails
+        // post: postdetails
       });
 
-      
     }
     //res.sendFile(path.join(__dirname, "../public/login.html"));
     res.render("landing");
@@ -39,9 +37,9 @@ module.exports = function(app) {
   // *If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/homescreenCG", isAuthenticated, (req, res) => {
     //res.sendFile(path.join(__dirname, "../public/homescreenCG.html"));
-    console.log(postdetails);
+    // console.log(postdetails);
     res.render("homescreenCG", {
-      post: postdetails
+      // post: postdetails
     });
   });
 
@@ -55,9 +53,7 @@ module.exports = function(app) {
     res.render("members");
   });
 
-
   app.get("/landing", (req, res) => {
     res.render("landing");
   });
-
 };
