@@ -57,4 +57,10 @@ module.exports = function(app) {
       res.json(event);
     });
   });
+
+  app.post("/api/newEvent", (req, res) => {
+    db.eventLocation.create({
+      
+    });
+  })
 };
