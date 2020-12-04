@@ -144,7 +144,6 @@ $(document).ready(() => {
   $("form").submit(event => {
     event.preventDefault();
     const form = $("form").serialize();
-    console.log(form.split("&"));
   });
   if ($.find("#map").length > 0) {
     drawMap();
