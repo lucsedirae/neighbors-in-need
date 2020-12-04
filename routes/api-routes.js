@@ -58,8 +58,16 @@ module.exports = function(app) {
     });
   });
 
-//   app.post("/api/newEvent", (req, res) => {
-//     db.eventLocation.create({
-//   });
-//   })
+  app.post("/api/newEvent", (req, res) => {
+    db.eventLocation.create({
+      location: req.body.location,
+      address: req.body.address,
+      eventDescription: req.body.eventDescription,
+      eventTime: req.body.eventTime,
+      latitude: req.body.latitude,
+      longitude: req.body.longitude
+  }).then( dbEvent => {
+    res.json(dbEvent);
+  })
+  })
 };

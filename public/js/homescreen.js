@@ -140,9 +140,12 @@ $(document).ready(() => {
   });
 
   //*CODE PUTS BOTH THE PASSWORD AND USERNAME IN LANDING.JS IN AN ARRAY AND/OR COLLECTS THE FORM DATA FROM HOMESCREENnin.html
-  $("form").submit(event => {
+  $("form.event-info").on("submit", event => {
     event.preventDefault();
-    const form = $("form").serialize();
+    $.post("/api/newEvent", {
+      
+    })
+    const form = $("form.event-info").serialize();
   });
   if ($.find("#map").length > 0) {
     drawMap();
