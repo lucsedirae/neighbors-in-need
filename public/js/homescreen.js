@@ -85,11 +85,25 @@ $(document).ready(() => {
     //? Refactor suggestion: replace jQuery loop with a handlebars view
     $.get("/api/events", data => {
       for (let i = 0; i < data.length; i++) {
+        let time = new Date (data[i].eventTime);
+        let hour = time.getHours();
+        let ampm = "am";
+        //Formatting time to AM/PM
+        if (hour > 12) {
+          hour -= 12;
+          ampm = "pm";
+        }
+        
+        let displayTime = time.getMonth()+1 + "/" + time.getDate() + " at " + hour + ampm;
+        //If the time indicated is 12AM - aka no time provided do not display the time
+        if(hour === 12 && ampm === "am"){
+          displayTime = time.getMonth()+1 + "/" + time.getDate();
+        }
         $("#info-table").append(`
           <tr>
             <td scope="col">${data[i].location}</td>
             <td scope="col">${data[i].address}</td>
-            <td scope="col">${data[i].eventTime}</td>
+            <td scope="col">${displayTime}</td>
             <td scope="col">${data[i].eventDescription}</td>
           </tr>
         `);
