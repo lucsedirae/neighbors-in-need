@@ -96,18 +96,18 @@ $(document).ready(() => {
       }
     });
 
-    const postdetails = [];
-    //Get request to populate tables through handlebars
-    $.get("/api/events", data => {
-      for (let i = 0; i < data.length; i++) {
-        postdetails.push({
-          location: data[i].location,
-          address: data[i].address,
-          eventTime: data[i].eventTime,
-          eventDescription: data[i].eventDescription
-        });
-      }
-    })
+    // const postdetails = [];
+    // //Get request to populate tables through handlebars
+    // $.get("/api/events", data => {
+    //   for (let i = 0; i < data.length; i++) {
+    //     postdetails.push({
+    //       location: data[i].location,
+    //       address: data[i].address,
+    //       eventTime: data[i].eventTime,
+    //       eventDescription: data[i].eventDescription
+    //     });
+    //   }
+    // })
 
     //*Positionstack geocoding code
     //! JD 12/2 - Currently commented out until form submission validation is connected
@@ -140,7 +140,6 @@ $(document).ready(() => {
   });
 
   //*CODE PUTS BOTH THE PASSWORD AND USERNAME IN LANDING.JS IN AN ARRAY AND/OR COLLECTS THE FORM DATA FROM HOMESCREENnin.html
-  //!MARK 11/30
   $("form").submit(event => {
     event.preventDefault();
     const form = $("form").serialize();

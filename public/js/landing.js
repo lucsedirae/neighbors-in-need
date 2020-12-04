@@ -28,30 +28,6 @@ $(document).ready(() => {
     $("#hide-go").hide();
   });
 
-  //*Listener that handles the login button request routing user to the /login path
-  $("#login-button").click(() => {
-    const existingUser = {
-      email: $("#username-login").val().trim(),
-      password: $("#inputPassword4").val().trim()
-    };
-    if (!existingUser.email || !existingUser.password) {
-      return;
-    }
-
-    $.ajax({
-      url: "/api/login",
-      data: existingUser,
-      type: "POST",
-      success: () => {
-        console.log("success");
-      }
-    }).then(() => {
-      $.get("/homescreenCG", data => {
-        console.log("Please god let this work");
-      });
-    });
-  });
-
   $("#signup-button").click(() => {
     const newUser = {
       email: $("#new-email").val().trim(),
