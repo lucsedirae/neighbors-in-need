@@ -48,9 +48,7 @@ module.exports = function(app) {
   //*This route displays the Neighbor In Need view that does not require user authentication
   app.get("/homescreenNIN", (req, res) => {
     //res.sendFile(path.join(__dirname, "../public/homescreenNIN.html"));
-    res.render("homescreenNIN", {
-      post: postdetails
-    });
+    res.render("homescreenNIN");
   });
 
   app.get("/members", (req, res) => {
