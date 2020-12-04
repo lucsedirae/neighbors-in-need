@@ -4,9 +4,9 @@
     <div class="col-xs-4">
       <img src="img/NINv2.png" class="navbar-img navbar-brand"></img>
     </div>
-    <div class="col-xs-3 col-xs-offset-5">
+    {{!-- <div class="col-xs-3 col-xs-offset-5">
       <i class="fas fa-sign-out-alt fa-lg"></i>
-    </div>
+    </div> --}}
   </div>
 </div>
 
@@ -61,26 +61,27 @@
       <!-- MARK 11/30 -->
          <div class="col-md-6 col-md-offset-3">
            <div id="myDIV">
-             <form class="event-info" id="form"> 
+
+             <form class="event_info" id="event-form"> 
               <div class="form-group">
                 <label for="location">Location:</label>
-                <input name="location" type="text" class="form-control" placeholder="Ex. Richmond Community Center"> 
+                <input name="location" type="text" id="location" class="form-control" placeholder="Ex. Richmond Community Center"> 
               </div>
               <div class="form-group">
                 <label for="address">Address:</label>
-                <input name="address" type="text" class="form-control" placeholder="Ex. 1234 Road Str Richmond, Va 23220">
+                <input name="address" type="text" class="form-control" id="address" placeholder="Ex. 1234 Road Str Richmond, Va 23220">
               </div>
               <div class="form-group">
                 <label for="time">Time:</label>
-                <input name= "time" type="text" class="form-control" placeholder="Ex. 11:00AM"> 
+                <input name= "time" type="text" class="form-control" id="time" placeholder="Ex. 11:00AM"> 
               </div>
               <div class="form-group">
                 <label for="description">Description:</label>
                 <!-- <input name="description" type="text" class="form-control" rows="3" placeholder="Ex. Hot lunch provided from 11 - 2pm. First come, first served."> -->
-                <textarea name="description" type="text" class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Ex. Hot lunch provided from 11 - 2pm. First come, first served."></textarea> 
+                <textarea name="description" type="text" class="form-control" id="description" rows="2" placeholder="Ex. Hot lunch provided from 11 - 2pm. First come, first served."></textarea> 
               </div>              
             </form>
-            <button type="submit" class="btn-lg">Add New Post</button>
+            <button type="submit" class="btn-lg" id="event-button">Add New Event</button>
           </div> <!--this div toggles and is hidden when "get-started" is clicked-->
           <button type="submit" id="get_started" class="btn-md">Toggle Add Post Fields</button>
         </div>

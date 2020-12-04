@@ -13,8 +13,8 @@ $(document).ready(() => {
       APIkey;
     $.ajax({
       url: queryURL,
-      method: "GET"
-    }).then(response => {
+      method: "GET",
+    }).then((response) => {
       let forecastDay = "";
       let temp = "";
       let wIcon = "";
@@ -63,7 +63,8 @@ $(document).ready(() => {
     ).addTo(map);
 
     //* Retrieves event data from SQL and populates the map with markers for each location based on stored coordinates
-    $.get("/api/events", data => {
+    //TODO: NEEDS TO BE FUNCTIONIZED
+    $.get("/api/events", (data) => {
       for (let i = 0; i < data.length; i++) {
         events.push(data[i]);
         locations.push({
@@ -76,16 +77,16 @@ $(document).ready(() => {
       for (let i = 0; i < locations.length; i++) {
         const marker = L.marker([
           locations[i].latitude,
-          locations[i].longitude
+          locations[i].longitude,
         ]).addTo(map);
       }
     });
 
     //* Retrieves event data and populates the info panel
     //? Refactor suggestion: replace jQuery loop with a handlebars view
-    $.get("/api/events", data => {
+    $.get("/api/events", (data) => {
       for (let i = 0; i < data.length; i++) {
-        let time = new Date (data[i].eventTime);
+        let time = new Date(data[i].eventTime);
         let hour = time.getHours();
         let ampm = "am";
         //Formatting time to AM/PM
@@ -93,11 +94,12 @@ $(document).ready(() => {
           hour -= 12;
           ampm = "pm";
         }
-        
-        let displayTime = time.getMonth()+1 + "/" + time.getDate() + " at " + hour + ampm;
+
+        let displayTime =
+          time.getMonth() + 1 + "/" + time.getDate() + " at " + hour + ampm;
         //If the time indicated is 12AM - aka no time provided do not display the time
-        if(hour === 12 && ampm === "am"){
-          displayTime = time.getMonth()+1 + "/" + time.getDate();
+        if (hour === 12 && ampm === "am") {
+          displayTime = time.getMonth() + 1 + "/" + time.getDate();
         }
         $("#info-table").append(`
           <tr>
@@ -122,30 +124,6 @@ $(document).ready(() => {
     //     });
     //   }
     // })
-
-    //*Positionstack geocoding code
-    //! JD 12/2 - Currently commented out until form submission validation is connected
-    // const accessToken = "0a0c85b3c0a2dcab89f4744c3d376bd5";
-    // //! searchString needs to be redefined as the address coming out of SQL
-    // const searchString = "6610 Fernwood St Henrico, VA 23228";
-    // const queryURL =
-    //   "http://api.positionstack.com/v1/forward?access_key=" +
-    //   accessToken +
-    //   "&query=" +
-    //   searchString +
-    //   "&output=json";+
-
-    // $.ajax({
-    //   url: queryURL,
-    //   method: "GET"
-    // }).then(response => {
-    //   const locObj = response.data[0];
-    //   locations.locations.push({
-    //     address: locObj.label,
-    //     latitude: locObj.latitude,
-    //     longitude: locObj.longitude,
-    //   });
-    // });
   }
 
   //*"get_started" toggles a drop down menu with all the form elements location, address, ect..
@@ -153,15 +131,63 @@ $(document).ready(() => {
     $("#myDIV").toggle(500);
   });
 
+  let tempObj = {};
+  let coords = {};
+
   //*CODE PUTS BOTH THE PASSWORD AND USERNAME IN LANDING.JS IN AN ARRAY AND/OR COLLECTS THE FORM DATA FROM HOMESCREENnin.html
-  $("form.event-info").on("submit", event => {
+  $("#event-button").on("click", (event) => {
     event.preventDefault();
-    $.post("/api/newEvent", {
-      
-    })
-    const form = $("form.event-info").serialize();
+    tempObj = {
+      location: $("#location").val(),
+      address: $("#address").val(),
+      time: $("#time").val(),
+      description: $("#description").val(),
+    };
+    getCoords();
+    // pushEvent();
   });
+
+  //*Checks to see if a map element is present on DOM. If so it calls the drawMap func
   if ($.find("#map").length > 0) {
     drawMap();
   }
 });
+
+function pushEvent() {
+  //!This goes in the promise
+  let newEvent = {
+    location: tempObj.location,
+    address: tempObj.address,
+    time: tempObj.time,
+    description: tempObj.description,
+    latitude: coords.latitude,
+    longitude: coords.longitude,
+  };
+  console.log(newEvent);
+  $.post("/api/newEvent", newEvent);
+  console.log(newEvent);
+}
+
+function getCoords(address) {
+  //*Positionstack geocoding code
+  const accessToken = "0a0c85b3c0a2dcab89f4744c3d376bd5";
+  const searchString = address;
+  const queryURL =
+    "http://api.positionstack.com/v1/forward?access_key=" +
+    accessToken +
+    "&query=" +
+    searchString +
+    "&output=json";
+  +$.ajax({
+    url: queryURL,
+    method: "GET",
+  }).then((response) => {
+    const locObj = response.data[0];
+    locations.locations.push({
+      address: locObj.label,
+      latitude: locObj.latitude,
+      longitude: locObj.longitude,
+    });
+    return { latitude: locObj.latitude, longitude: locObj.longitude };
+  });
+}
