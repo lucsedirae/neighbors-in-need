@@ -13,8 +13,8 @@ $(document).ready(() => {
       APIkey;
     $.ajax({
       url: queryURL,
-      method: "GET",
-    }).then((response) => {
+      method: "GET"
+    }).then(response => {
       let forecastDay = "";
       let temp = "";
       let wIcon = "";
@@ -141,12 +141,12 @@ $(document).ready(() => {
 
   //*CODE PUTS BOTH THE PASSWORD AND USERNAME IN LANDING.JS IN AN ARRAY AND/OR COLLECTS THE FORM DATA FROM HOMESCREENnin.html
   //!MARK 11/30
-  $("form").submit((event) => {
+  $("form").submit(event => {
     event.preventDefault();
     const form = $("form").serialize();
+    console.log(form.split("&"));
   });
-
-  drawMap();
-
-
+  if ($.find("#map").length > 0) {
+    drawMap();
+  }
 });

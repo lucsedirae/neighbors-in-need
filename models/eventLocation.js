@@ -22,16 +22,13 @@ module.exports = function(sequelize, DataTypes) {
     latitude: {
       type: DataTypes.DECIMAL(8, 6),
       allowNull: false,
-      defaultValue: 0.000000
+      defaultValue: 0.0
     },
     longitude: {
       type: DataTypes.DECIMAL(8, 6),
       allowNull: false,
-      defaultValue: 0.000000
+      defaultValue: 0.0
     }
   });
-  
-
   return EventLocation;
-
 };
