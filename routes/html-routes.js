@@ -9,12 +9,12 @@ const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
   app.get("/", (req, res) => {
-    // *If the user already has an account send them to the members page if not send them to landing/login
-    if (req.user) {
-      // *renders members.handlebars if user has account
-      res.render("members"); 
-    }
-    //* otherwise renders create login/landing
+    // // *If the user already has an account send them to the members page if not send them to landing/login
+    // if (req.user) {
+    //   // *renders members.handlebars if user has account
+    //   res.render("homescreenCG"); 
+    // }
+    // //* otherwise renders create login/landing
     res.render("landing");
   });
 

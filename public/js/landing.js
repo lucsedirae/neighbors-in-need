@@ -1,7 +1,5 @@
-//const { initialize } = require("passport");
-
 $(document).ready(() => {
-  //hide create account fields and go button initially
+  // *hide create account fields and go button initially
   function init(){
     $("#hide").hide();
     $("#hide-button").hide();
@@ -9,7 +7,7 @@ $(document).ready(() => {
   };
   init();
 
-  //if NIN radio is clicked hide the create account feilds
+  // *if NIN radio is clicked hide the create account feilds
   $("#gridRadios1").click(() => {
     $("#hide-go").show();
     $("#hide").hide();
@@ -17,16 +15,14 @@ $(document).ready(() => {
   });
 
   $("#go-homescreen").click(() => {
-    // console.log("Success!");
     window.location.replace("/homescreenNIN");
   });
 
   $(".navbar-img").click(() => {
-    // console.log("Success!");
     window.location.replace("/landing");
   });
 
-  //if the CG radio is clicked show the create account fields
+  // *if the CG radio is clicked show the create account fields
   $("#gridRadios2").click(() => {
     $("#hide").show();
     $("#hide-button").show();
