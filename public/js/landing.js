@@ -21,6 +21,7 @@ $(document).ready(() => {
     window.location.replace("/homescreenNIN");
   });
 
+
   $(".navbar-img").click(() => {
     // console.log("Success!");
     window.location.replace("/landing");
@@ -46,6 +47,8 @@ $(document).ready(() => {
       type: "POST",
       success: () => {
         console.log("success");
+        //this doesnt seem to work
+        window.location.replace("/homescreenCG");
       }
     });
   });
