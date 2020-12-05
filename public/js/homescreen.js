@@ -111,19 +111,6 @@ $(document).ready(() => {
         `);
       }
     });
-
-    // const postdetails = [];
-    // //Get request to populate tables through handlebars
-    // $.get("/api/events", data => {
-    //   for (let i = 0; i < data.length; i++) {
-    //     postdetails.push({
-    //       location: data[i].location,
-    //       address: data[i].address,
-    //       eventTime: data[i].eventTime,
-    //       eventDescription: data[i].eventDescription
-    //     });
-    //   }
-    // })
   }
 
   //*"get_started" toggles a drop down menu with all the form elements location, address, ect..
@@ -134,60 +121,77 @@ $(document).ready(() => {
   let tempObj = {};
   let coords = {};
 
-  //*CODE PUTS BOTH THE PASSWORD AND USERNAME IN LANDING.JS IN AN ARRAY AND/OR COLLECTS THE FORM DATA FROM HOMESCREENnin.html
   $("#event-button").on("click", (event) => {
-    event.preventDefault();
-    tempObj = {
+    let newEvent = {
       location: $("#location").val(),
       address: $("#address").val(),
       time: $("#time").val(),
       description: $("#description").val(),
+      // latitude: coords.latitude,
+      // longitude: coords.longitude,
     };
-    getCoords();
-    // pushEvent();
+  
   });
+
+  function loadScreen() {
+    
+  }
+
+  //*CODE PUTS BOTH THE PASSWORD AND USERNAME IN LANDING.JS IN AN ARRAY AND/OR COLLECTS THE FORM DATA FROM HOMESCREENnin.html
+  // $("#event-button").on("click", (event) => {
+  //   event.preventDefault();
+  //   tempObj = {
+  //     location: $("#location").val(),
+  //     address: $("#address").val(),
+  //     time: $("#time").val(),
+  //     description: $("#description").val(),
+  //   };
+  //   getCoords();
+  //   // pushEvent();
+  // });
 
   //*Checks to see if a map element is present on DOM. If so it calls the drawMap func
   if ($.find("#map").length > 0) {
     drawMap();
   }
+  //*End of document.ready
 });
 
-function pushEvent() {
-  //!This goes in the promise
-  let newEvent = {
-    location: tempObj.location,
-    address: tempObj.address,
-    time: tempObj.time,
-    description: tempObj.description,
-    latitude: coords.latitude,
-    longitude: coords.longitude,
-  };
-  console.log(newEvent);
-  $.post("/api/newEvent", newEvent);
-  console.log(newEvent);
-}
+// function pushEvent() {
+//   //!This goes in the promise
+//   let newEvent = {
+//     location: tempObj.location,
+//     address: tempObj.address,
+//     time: tempObj.time,
+//     description: tempObj.description,
+//     latitude: coords.latitude,
+//     longitude: coords.longitude,
+//   };
+//   console.log(newEvent);
+//   $.post("/api/newEvent", newEvent);
+//   console.log(newEvent);
+// }
 
-function getCoords(address) {
-  //*Positionstack geocoding code
-  const accessToken = "0a0c85b3c0a2dcab89f4744c3d376bd5";
-  const searchString = address;
-  const queryURL =
-    "http://api.positionstack.com/v1/forward?access_key=" +
-    accessToken +
-    "&query=" +
-    searchString +
-    "&output=json";
-  +$.ajax({
-    url: queryURL,
-    method: "GET",
-  }).then((response) => {
-    const locObj = response.data[0];
-    locations.locations.push({
-      address: locObj.label,
-      latitude: locObj.latitude,
-      longitude: locObj.longitude,
-    });
-    return { latitude: locObj.latitude, longitude: locObj.longitude };
-  });
-}
+// function getCoords(address) {
+//   //*Positionstack geocoding code
+//   const accessToken = "0a0c85b3c0a2dcab89f4744c3d376bd5";
+//   const searchString = address;
+//   const queryURL =
+//     "http://api.positionstack.com/v1/forward?access_key=" +
+//     accessToken +
+//     "&query=" +
+//     searchString +
+//     "&output=json";
+//   +$.ajax({
+//     url: queryURL,
+//     method: "GET",
+//   }).then((response) => {
+//     const locObj = response.data[0];
+//     locations.locations.push({
+//       address: locObj.label,
+//       latitude: locObj.latitude,
+//       longitude: locObj.longitude,
+//     });
+//     return { latitude: locObj.latitude, longitude: locObj.longitude };
+//   });
+// }
