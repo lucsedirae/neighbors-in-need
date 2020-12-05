@@ -63,7 +63,7 @@ $(document).ready(() => {
     ).addTo(map);
 
     //* Retrieves event data from SQL and populates the map with markers for each location based on stored coordinates
-    //TODO: NEEDS TO BE FUNCTIONIZED
+    //TODO: NEEDS TO BE turned into a function and moved outside document.ready
     $.get("/api/events", (data) => {
       for (let i = 0; i < data.length; i++) {
         events.push(data[i]);
@@ -97,7 +97,7 @@ $(document).ready(() => {
 
         let displayTime =
           time.getMonth() + 1 + "/" + time.getDate() + " at " + hour + ampm;
-        //If the time indicated is 12AM - aka no time provided do not display the time
+        // *If the time indicated is 12AM - aka no time provided do not display the time
         if (hour === 12 && ampm === "am") {
           displayTime = time.getMonth() + 1 + "/" + time.getDate();
         }
@@ -125,30 +125,14 @@ $(document).ready(() => {
     let newEvent = {
       location: $("#location").val(),
       address: $("#address").val(),
-      time: $("#time").val(),
-      description: $("#description").val(),
+      eventTime: $("#time").val(),
+      eventDescription: $("#description").val(),
       // latitude: coords.latitude,
       // longitude: coords.longitude,
     };
     $.post("/api/newEvent", newEvent);
-    // pushEvent();
     location.reload();
   });
-
-  function loadScreen() {}
-
-  //*CODE PUTS BOTH THE PASSWORD AND USERNAME IN LANDING.JS IN AN ARRAY AND/OR COLLECTS THE FORM DATA FROM HOMESCREENnin.html
-  // $("#event-button").on("click", (event) => {
-  //   event.preventDefault();
-  //   tempObj = {
-  //     location: $("#location").val(),
-  //     address: $("#address").val(),
-  //     time: $("#time").val(),
-  //     description: $("#description").val(),
-  //   };
-  //   getCoords();
-  //   // pushEvent();
-  // });
 
   //*Checks to see if a map element is present on DOM. If so it calls the drawMap func
   if ($.find("#map").length > 0) {
@@ -157,21 +141,8 @@ $(document).ready(() => {
   //*End of document.ready
 });
 
-// function pushEvent() {
-//   //!This goes in the promise
-//   let newEvent = {
-//     location: tempObj.location,
-//     address: tempObj.address,
-//     time: tempObj.time,
-//     description: tempObj.description,
-//     latitude: coords.latitude,
-//     longitude: coords.longitude,
-//   };
-//   console.log(newEvent);
-//   $.post("/api/newEvent", newEvent);
-//   console.log(newEvent);
-// }
-
+//* Geocoding function
+//! JD 12/5/20 - Currently not functioning. Need to solve asynchronous problem for order of operations. Submit address --> Geocode address and return coords --> Post full event object to SQL. Issue open in GitHub
 // function getCoords(address) {
 //   //*Positionstack geocoding code
 //   const accessToken = "0a0c85b3c0a2dcab89f4744c3d376bd5";

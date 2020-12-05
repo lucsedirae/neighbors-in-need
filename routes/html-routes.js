@@ -11,25 +11,20 @@ module.exports = function(app) {
   app.get("/", (req, res) => {
     // *If the user already has an account send them to the members page if not send them to landing/login
     if (req.user) {
-      // renders members.handlebars if user has account
+      // *renders members.handlebars if user has account
       res.render("members"); 
     }
-    // res.sendFile(path.join(__dirname, "../public/landing.html"));
-    //otherwise renders create login/landing
+    //* otherwise renders create login/landing
     res.render("landing");
   });
 
   app.get("/login", (req, res) => {
     // *If the user already has an account send them to the homescreenCG page, otherwise route to login.html
     if (req.user) {
-      //res.redirect("/homescreenCG");
-      //postdetails would be an array with the objects with the details included
       res.render("homescreenCG", {
-        // post: postdetails
       });
 
     }
-    //res.sendFile(path.join(__dirname, "../public/login.html"));
     res.render("landing");
   });
 
@@ -38,17 +33,12 @@ module.exports = function(app) {
   //! JD - 12/5/20 - Middleware not functioning properly. Termporarily disabled to allow redirect
   // app.get("/homescreenCG", isAuthenticated, (req, res) => {
   app.get("/homescreenCG", (req, res) => {
-
-    //res.sendFile(path.join(__dirname, "../public/homescreenCG.html"));
-    // console.log(postdetails);
     res.render("homescreenCG", {
-      // post: postdetails
     });
   });
 
   //*This route displays the Neighbor In Need view that does not require user authentication
   app.get("/homescreenNIN", (req, res) => {
-    //res.sendFile(path.join(__dirname, "../public/homescreenNIN.html"));
     res.render("homescreenNIN");
   });
 
