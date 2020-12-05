@@ -1,11 +1,11 @@
 $(document).ready(() => {
   // Getting references to our form and input
-  const signUpForm = $("form.signup");
+  const signUpForm = $("#signup-button");
   const emailInput = $("input#email-input");
   const passwordInput = $("input#password-input");
 
   // When the signup button is clicked, we validate the email and password are not blank
-  signUpForm.on("submit", event => {
+  signUpForm.on("click", event => {
     event.preventDefault();
     const userData = {
       email: emailInput.val().trim(),
@@ -29,14 +29,35 @@ $(document).ready(() => {
       password: password
     })
       .then(() => {
-        window.location.replace("/members");
+        window.location.replace("/homescreenCG");
         // If there's an error, handle it by throwing up a bootstrap alert
       })
-      .catch(handleLoginErr);
-  }
+      .catch(err => {
+        console.log(err);
+      // .catch(handleLoginErr);
+  });
 
-  function handleLoginErr(err) {
-    $("#alert .msg").text(err.responseJSON);
-    $("#alert").fadeIn(500);
-  }
-});
+  // function handleLoginErr(err) {
+  //   $("#alert .msg").text(err.responseJSON);
+  //   $("#alert").fadeIn(500);
+  // }
+}});
+
+  // $("#signup-button").click(() => {
+  //   const newUser = {
+  //     email: $("#new-email").val().trim(),
+  //     password: $("#inputPassword3").val().trim()
+  //   };
+  //   console.log(newUser);
+
+  //   $.ajax({
+  //     url: "/api/signup",
+  //     data: newUser,
+  //     type: "POST",
+  //     success: () => {
+  //       console.log("success");
+  //       //this doesnt seem to work
+  //       window.location.replace("/homescreenCG");
+  //     }
+  //   });
+  // });

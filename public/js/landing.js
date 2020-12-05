@@ -34,30 +34,23 @@ $(document).ready(() => {
     $("#hide-go").hide();
   });
 
-  $("#signup-button").click(() => {
-    const newUser = {
-      email: $("#new-email").val().trim(),
-      password: $("#inputPassword3").val().trim()
-    };
-    console.log(newUser);
+  // $("#signup-button").click(() => {
+  //   const newUser = {
+  //     email: $("#new-email").val().trim(),
+  //     password: $("#inputPassword3").val().trim()
+  //   };
+  //   console.log(newUser);
 
-    $.ajax({
-      url: "/api/signup",
-      data: newUser,
-      type: "POST",
-      success: () => {
-        console.log("success");
-        //this doesnt seem to work
-        window.location.replace("/homescreenCG");
-      }
-    });
-  });
-  // click event to gather form info, for username and password
-  // IF YOU UNCOMMENT THIS CODE YOU WILL GET DUPLICATES, THE SAME FUNCTION IS BEING RUN IN HOMESCREEN.JS 
-  // Mark 11/30
-
-  // $('form').submit(function(event) {
-  //   event.preventDefault();
-  //   var form = $('form').serialize();
-  //   console.log(form.split('&'));
+  //   $.ajax({
+  //     url: "/api/signup",
+  //     data: newUser,
+  //     type: "POST",
+  //     success: () => {
+  //       console.log("success");
+  //       //this doesnt seem to work
+  //       window.location.replace("/homescreenCG");
+  //     }
+  //   });
+  // });
+//* End document.ready
 });
