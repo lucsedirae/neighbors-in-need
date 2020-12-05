@@ -23,7 +23,7 @@ NIN is an open source mobile-first application that allows persons experiencing 
 
 * [Testing](#testing)
 
-* [Questions](#questions)
+* [Development Team](#Development-Team)
 
 <hr>
 
@@ -34,11 +34,11 @@ To install locally, clone repo from GitHub and run <npm i> in the command line. 
 The app features two separate user views. One view is publically available and does not require account authentication. This is to allow persons in need to access resources semi-anonymously (does not prevent IP address tracking). The other view requires a service provider user to create an account and login in order to post an event or resource available
 <hr>
 
-![Main care provider view](/public/img/CG-Homescreen-fields-hidden.png)
+![Main care provider view](./public/img/CG-Homescreen-fields-hidden.PNG)
 
 <hr>
 
-![Landing page create account view ](/public/img/CG-Radio.png)
+![Landing page create account view ](./public/img/CG-Radio.PNG)
 
 ## License
 Created under the MIT license. See LICENSE.txt for more information.
@@ -52,7 +52,14 @@ Please view the issues tab of GitHub to view outstanding issues. Several known b
 ## Testing
 no testing libraries currently in use
 
-## Questions
-Have questions on this application? Contact me via:<br>
-Email: jondeavers@gmail.com <br>
-My GitHub Profile: lucsedirae <br>   
+## Development Team
+[Melanie Hall](https://mhall313.github.io/)
+
+[Mark Major](https://github.com/MarkMajorUR)
+
+[Tremayne Terry](https://github.com/tremaynet)
+
+[Kelli Strawbridge](https://github.com/Austinkst)
+
+[Jon Deavers](https://jondeavers.net)
+
