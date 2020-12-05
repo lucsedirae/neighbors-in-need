@@ -130,15 +130,12 @@ $(document).ready(() => {
       // latitude: coords.latitude,
       // longitude: coords.longitude,
     };
-    getCoords();
+    $.post("/api/newEvent", newEvent);
     // pushEvent();
     location.reload();
-    
   });
 
-  function loadScreen() {
-
-  }
+  function loadScreen() {}
 
   //*CODE PUTS BOTH THE PASSWORD AND USERNAME IN LANDING.JS IN AN ARRAY AND/OR COLLECTS THE FORM DATA FROM HOMESCREENnin.html
   // $("#event-button").on("click", (event) => {
