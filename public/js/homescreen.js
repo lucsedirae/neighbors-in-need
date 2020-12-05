@@ -130,11 +130,14 @@ $(document).ready(() => {
       // latitude: coords.latitude,
       // longitude: coords.longitude,
     };
-  
+    getCoords();
+    // pushEvent();
+    location.reload();
+    
   });
 
   function loadScreen() {
-    
+
   }
 
   //*CODE PUTS BOTH THE PASSWORD AND USERNAME IN LANDING.JS IN AN ARRAY AND/OR COLLECTS THE FORM DATA FROM HOMESCREENnin.html

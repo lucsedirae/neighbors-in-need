@@ -1,6 +1,7 @@
 // *Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
+const path = require("path");
 
 module.exports = function(app) {
   // *Using the passport.authenticate middleware with our local strategy.
@@ -23,7 +24,9 @@ module.exports = function(app) {
       password: req.body.password
     })
       .then(() => {
-        res.redirect(307, "/homescreenCG");
+        //console.log("success");
+        //this doesnt seem to work
+        res.redirect("/homescreenCG");
       })
       .catch(err => {
         res.status(401).json(err);
