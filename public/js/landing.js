@@ -21,6 +21,11 @@ $(document).ready(() => {
     window.location.replace("/homescreenNIN");
   });
 
+  $(".navbar-img").click(() => {
+    // console.log("Success!");
+    window.location.replace("/landing");
+  });
+
   //if the CG radio is clicked show the create account fields
   $("#gridRadios2").click(() => {
     $("#hide").show();
