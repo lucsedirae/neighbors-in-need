@@ -145,6 +145,8 @@ $(document).ready(() => {
     };
     getCoords();
     // pushEvent();
+    location.reload();
+    
   });
 
   //*Checks to see if a map element is present on DOM. If so it calls the drawMap func

@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "j33zaLou!l34rn",
+    "password": null,
     "database": "nin_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
