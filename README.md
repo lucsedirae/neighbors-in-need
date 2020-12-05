@@ -34,11 +34,11 @@ To install locally, clone repo from GitHub and run <npm i> in the command line. 
 The app features two separate user views. One view is publically available and does not require account authentication. This is to allow persons in need to access resources semi-anonymously (does not prevent IP address tracking). The other view requires a service provider user to create an account and login in order to post an event or resource available
 <hr>
 
-![Main care provider view](/public/img/CG-Homescreen-fields-hidden.png)
+![Main care provider view](./public/img/CG-Homescreen-fields-hidden.PNG)
 
 <hr>
 
-![Landing page create account view ](/public/img/CG-Radio.png)
+![Landing page create account view ](./public/img/CG-Radio.PNG)
 
 ## License
 Created under the MIT license. See LICENSE.txt for more information.
