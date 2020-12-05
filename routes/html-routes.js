@@ -35,8 +35,9 @@ module.exports = function(app) {
 
   // *Here we've add our isAuthenticated middleware to this route.
   // *If a user who is not logged in tries to access this route they will be redirected to the signup page
+  //! JD - 12/5/20 - Middleware not functioning properly. Termporarily disabled to allow redirect
   // app.get("/homescreenCG", isAuthenticated, (req, res) => {
-  app.get("/homescreenCG", isAuthenticated, (req, res) => {
+  app.get("/homescreenCG", (req, res) => {
 
     //res.sendFile(path.join(__dirname, "../public/homescreenCG.html"));
     // console.log(postdetails);

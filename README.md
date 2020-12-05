@@ -23,6 +23,8 @@ NIN is an open source mobile-first application that allows persons experiencing 
 
 * [Testing](#testing)
 
+* [Dev Tools](#dev-tools)
+
 * [Development Team](#Development-Team)
 
 <hr>
@@ -50,7 +52,10 @@ To contribute, submit a pull request through GitHub being as specific as possibl
 Please view the issues tab of GitHub to view outstanding issues. Several known bugs are top priority to improve core functionality.
 
 ## Testing
-no testing libraries currently in use
+No testing libraries currently in use
+
+## Dev Tools
+This project supports the Better Comments VSCode extension for color coding comments. More information at [Better Comments VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments) 
 
 ## Development Team
 [Melanie Hall](https://mhall313.github.io/)
