@@ -1,7 +1,7 @@
 // Requiring necessary npm packages
 const express = require("express");
 const session = require("express-session");
-const compression = require("compression");
+// const compression = require("compression");
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
 const exphb = require("express-handlebars");
@@ -14,7 +14,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
-app.use(compression());
+// app.use(compression());
 // We need to use sessions to keep track of our user's login status
 app.use(
   //* Session secret is a randomly generated string to improve security. 
